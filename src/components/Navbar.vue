@@ -10,7 +10,7 @@
           <template v-if="user.loggedIn">
             <div class="nav-item">{{user.data.displayName}}</div>
             <li class="nav-item">
-              <a class="nav-link" @click.prevent="signOut">Sign out</a>
+              <el-button class="nav-link" @click.prevent="signOut">Sign out</el-button>
             </li>
           </template>
         </ul>

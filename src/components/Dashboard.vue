@@ -9,7 +9,7 @@
               <div>
               
                   <el-button @click="$router.push('/Upload')" class="navbar-brand">upload</el-button>
-                  <el-button @click="$router.push('/Upload')" class="navbar-brand">View Images</el-button>
+                  <el-button @click="$router.push('/Gridview')" class="navbar-brand">View Images</el-button>
             </div>
             </div>
             
@@ -25,7 +25,7 @@ export default {
   data(){
     return{
       flag: true
-    }
+    };
   },
   computed: {
     // map `this.user` to `this.$store.getters.user`

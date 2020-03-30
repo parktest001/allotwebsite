@@ -10,6 +10,7 @@ import firebase from "firebase";
 import { mapGetters } from "vuex";
 
 export default {
+  
   data() {
     return {
         mobnum: "null",
@@ -17,6 +18,12 @@ export default {
         text: null,
         result:null,
     };
+  },
+  computed: {
+    ...mapGetters({
+// map `this.user` to `this.$store.getters.user`
+      user: "user"
+    })
   },
   methods: {
 
