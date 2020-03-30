@@ -1,19 +1,42 @@
 <template>
-  <div class="container">
+  <div class="container" style="background-color: #DEDAE4; border: 2px solid #5A487A">
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="card">
-          <div class="card-header">Download Image</div>
-          <div class="card-body">
-              <div>
-            <el-button @click="getImages()">Get Images</el-button>
+          
+          <div class="card-body" v-if="user.loggedIn">
+              <div> 
+            <!-- <el-button @click="getImages()">Get Images</el-button> -->
             <div v-if="flag">
-              <div v-for="(key,value) in jsoninfo" :key="key.url"><img :src="key.url"/><div>{{key.description}}</div></div>
+              
+              <div v-for="(key,value) in jsoninfo" :key="key.url" style="padding-top:20px">
+                <center>
+              <el-card :body-style="{ padding: '0px' }" style="background-color: #F8F8FF;padding-top:20px;width:1000px;  border: 2px solid #5A487A;border-right: 8px solid #5A487A;border-left: 8px solid #5A487A;">
+                <center>
+                  <div style="padding-bottom:10px">
+                <img :src="key.url" :class="imageview" style="width:800px;" >
+                <div style="background-color: #DEDAE4;padding-top:20px; width:800px;height:100px;border:2px solid #5A487A;padding-bottom:10px ">
+                  <div><div style="float:left;font-size:15px;font-weight:bold">Uploader:&nbsp;&nbsp;</div>
+                  <div style="float:left;font-size:15px">{{key.name}}</div><img src="../assets/google-logo.png" style="width:20px;height:20px;float:left" /></div>
+                  <br>
+                  <div style="padding-top:5px">
+                  <div style="float:left;font-size:20px;font-weight:bold">Description:&nbsp;&nbsp;</div>
+                  <div v-if="key.description" style="float:left;padding-top:3.5px;">{{key.description}}</div>
+                  <div v-else style="float:left;padding-top:3.5px;">The uploader not described photo</div></div>
+                  
+                </div>
+                  </div>
+                </center>
+              </el-card>
+                </center>
+              </div>
               <!-- <div v-for="value in imgurlarr" :key="value">{{value}}</div> -->
             </div>
             </div>
             
-          </div>
+          </div >
+                  <div style="height:800px" v-else><center style="padding-top:200px"><h1>Please Login</h1></center></div>
+
         </div>
       </div>
     </div>
@@ -44,10 +67,8 @@ export default {
       user: "user"
     })
   },
-  methods: {
-
- 
-    getImages() {
+  created()
+  {
                 var self = this
                 this.flag=true
                 firebase.database().ref().once('value', function(snap){
@@ -56,8 +77,11 @@ export default {
                 window.flag=true
                 console.log(snap.val())
                 })
-            
-        },
+  },
+  methods: {
+
+ 
+    
         getSingleImage()
         {
             // for(var val in this.jsoninfo){

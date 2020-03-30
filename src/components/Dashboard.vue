@@ -3,17 +3,21 @@
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="card">
-          <div class="card-header">Dashboard</div>
+          <center>
+          <div class="card-header"><h1>Dashboard</h1></div>
+          <img src="../assets/caution.png" style="width:50px;height:50px;border:2px solid #5A487A;" /><br><br>
+          <div><p><h3>!! All images uploaded will be open to public and any user of this app can view your photos or download to their devices</h3></p></div><br>
           <div class="card-body">
-            <div v-if="user" class="alert alert-success" role="alert">You are logged in!
+            <div v-if="user" class="alert alert-success" role="alert">
               <div>
               
-                  <el-button @click="$router.push('/Upload')" class="navbar-brand">upload</el-button>
-                  <el-button @click="$router.push('/Gridview')" class="navbar-brand">View Images</el-button>
+                  <el-button style="width:300px;height:50px;border:2px solid #5A487A" @click="$router.push('/Upload')" class="navbar-brand"><span style="font-size:25px;">Upload Image Public</span></el-button><br><br><br><br>
+                  <el-button style="width:300px;height:50px;border:2px solid #5A487A;" @click="$router.push('/Gridview')" class="navbar-brand"><span style="font-size:25px;">View Public Images</span></el-button>
             </div>
             </div>
             
           </div>
+          </center>
         </div>
       </div>
     </div>

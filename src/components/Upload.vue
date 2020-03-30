@@ -2,28 +2,28 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-8">
+        <center>
         <div class="card">
-          <div class="card-header">Upload Image</div>
+          <div class="card-header"><h1>Upload Image</h1></div>
           <div class="card-body">
               <div>
               <div>    
-            <el-card :body-style="{ padding: '0px' }">
-            <img id="someImageTagID" class="image">
             <div style="padding: 14px;">
-                <el-input v-model="description"></el-input>
+              <div><h4>Enter Image Description:</h4></div>
+                <el-input style="width:1000px;border: 2px solid #5A487A" maxlength="100" v-model="description"></el-input>
                 <div class="bottom clearfix">
-                <el-button type="text" class="button">Operating</el-button>
+                <div type="text" class="button"><h4>Image</h4></div>
                 </div>
             </div>
-            </el-card>
               </div>
-            <img id="uploadedimg" />
-            <el-input type="file" id="myfile" name="myfile" @select="showButton()"></el-input>
-            <el-button @click="uploadSingleImage()">Upload single image to public</el-button>
+            <center><input  style="padding-left:80px" type="file" id="myfile" name="myfile" @select="showButton()"/></center><br><br><br>
+            <el-button style="border: 2px solid #5A487A" @click="uploadSingleImage()">Upload single image to public</el-button><br><br><br>
+            <div><h4>Uploaded Image</h4></div>
+            <img  src="../assets/no.png" style="width:800px;border: 10px solid #5A487A" id="uploadedimg" />
             </div>
-            
           </div>
         </div>
+        </center>
       </div>
     </div>
   </div>
@@ -76,6 +76,10 @@ export default {
                     document.getElementById('uploadedimg').src = url;
                     self.source=url
                     self.saveMeta()
+                    self.$message({
+                    message: 'Image Uploaded Successfully',
+                    type: 'success'
+                  });
                 })
                 .catch(console.error);
 
