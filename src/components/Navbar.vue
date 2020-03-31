@@ -2,16 +2,27 @@
   <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="background-color: #B9ABD3;border: 2px solid #5A487A">
     <div class="container" style="height:80px;">
       
-      <router-link to="/login" class="navbar-brand" style="padding-left:20px;"><img src="../assets/home.png" style="width:30px;height:30px;padding-top:20px" /></router-link>
+      <router-link to="/login" class="navbar-brand" style="padding-left:20px;float:left"><img @click="loginpage()" src="../assets/home.png" style="width:30px;height:30px;padding-top:20px" /></router-link>
    
-                      <div style="float:right;padding-right:20px;padding-top:20px;"><el-button style="border:2px solid #5A487A" v-if="user.loggedIn" class="nav-link" @click.prevent="signOut" >Sign out</el-button></div>
+                      <div style="float:left;padding-left:580px;font-size:40px;padding-top:20px;font-weight:bold">Photo Grid</div>
 
             <div v-if="user.loggedIn" class="nav-item" style="float:right;padding-right:20px;padding-top:30px">Hi! {{user.data.displayName}}</div>
           
-      <span @click="goBack()" style="float:right;padding-right:20px;padding-top:5px;cursor: pointer;"><h2>Back</h2></span>
+      <span @click="goBack()" style="float:right;padding-right:20px;padding-top:5px;cursor: pointer;"><h2>Back</h2></span><br>
+      
         
     
         
+    </div >
+    <div v-if="user.loggedIn">
+    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+  <el-menu-item index="1"><span class="menuicon"><router-link to="/dashboard"  style="text-decoration: none;">Dashboard</router-link></span></el-menu-item>
+    <el-menu-item index="2"><span class="menuicon"><router-link to="/upload"  style="text-decoration: none;">Upload Photo</router-link></span></el-menu-item>
+  <el-menu-item index="3"><span class="menuicon"><router-link to="/gridview"  style="text-decoration: none;">View Photos</router-link></span></el-menu-item>
+  <el-menu-item @click="handleAbout()" index="4"><span class="menuicon">About</span></el-menu-item>
+  <div style="float:right;padding-right:20px;padding-top:10px;"><el-button style="border:2px solid #5A487A" v-if="user.loggedIn" class="nav-link" @click.prevent="signOut" >Sign out</el-button></div>
+
+</el-menu>
     </div>
   </nav>
 </template>
@@ -40,7 +51,22 @@ export default {
     },
     goBack() {
       window.history.back();
-    }
+    },
+    handleAbout()
+    {
+          this.$message('Development Stage');
+    },
+    loginpage()
+    {
+        this.$router.push('/login')
+    },
   }
 };
 </script>
+<style>
+.menuicon
+{
+  font-size: 18px
+}
+
+</style>

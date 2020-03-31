@@ -37,6 +37,10 @@ export default {
       user: "user"
     })
   },
+  mounted()
+  {
+    
+  },
   method: {
     showButton()
     {

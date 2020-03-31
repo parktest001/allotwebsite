@@ -1,12 +1,15 @@
 <template>
   <div style="padding-top:40px">
     <center>
-     <h3> <p class="pa">Login to Explore Photographs</p></h3>
+      <div v-if="user.loggedIn"><h1>Already Logged in</h1>
+      <el-button @click="enterApp()" style="width:300px;height:50px;border:2px solid #5A487A"><span style="font-size:20px;">Enter Application</span></el-button>
+      </div>
+     <div v-else><h3> <p class="pa">Login to Explore Photographs</p></h3>
 <p class="pa">Click pictures to satisfy you not to satisfy others <span class="blink">|</span></p> <br><br>
     
     <img src="../assets/google-logo.png" style="width:50px;height:50px;border:2px solid #5A487A;" /><br><br>
         <el-button @click="submit()" style="height:55px;width:300px" type="primary" plain><div style="font-size:20px">Sign in with Google</div></el-button>
-
+     </div>
     </center>
   </div>
 </template>
@@ -34,6 +37,10 @@ export default {
   mounted()
   {
     this.check()
+    // if(this.user.loggedIn)
+    // {
+    //   this.$router.push('/dashboard')
+    // }
   },
   methods: {
 
@@ -47,26 +54,32 @@ export default {
         var user = result.user;
         window.app.$router.push('/Dashboard')
         window.app.$message({
-          message: 'Successfully Logged Successfully',
+          message: 'Logged In Successfully',
           type: 'success'
         });
       })
 },
       check()
       {
-      if(this.user.loggedIn)
+        if(this.user.loggedIn)
           {
-            window.app=this
-            firebase
-              .auth()
-              .signOut()
-              .then(() => {
-                this.$router.replace({
-                  name: "login"
-                });
-                //window.app.$message('Logged out successfully');
-              });
+        
           }
+      // if(this.user.loggedIn)
+      //     {
+      //       window.app=this
+      //       firebase
+      //         .auth()
+      //         .signOut()
+      //         .then(() => {
+                
+      //           //window.app.$message('Logged out successfully');
+      //         });
+      //     }
+      },
+      enterApp()
+      {
+          this.$router.push('/dashboard')
       },
 
     },

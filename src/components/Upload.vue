@@ -4,8 +4,9 @@
       <div class="col-md-8">
         <center>
         <div class="card">
-          <div class="card-header"><h1>Upload Image</h1></div>
-          <div class="card-body">
+          <div v-if="loader" class="loader"></div>
+          <div v-else class="card-header"><h1>Upload Image</h1></div>
+          <div class="card-body" style=" width:1200px;border: 2px solid #5A487A;border-right: 8px solid #5A487A;border-left: 8px solid #5A487A;">
               <div>
               <div>    
             <div style="padding: 14px;">
@@ -43,6 +44,7 @@ export default {
         imgSrc: null,
         description : "",
         source : null,
+        loader:false,
     };
   },
   computed: {
@@ -55,6 +57,8 @@ export default {
 
  
     uploadSingleImage() {
+      if(document.querySelector('#myfile').files[0] ){
+                this.loader=true
                 var self=this
                 window.description = this.description
                 window.username = this.user.data.displayName
@@ -71,6 +75,7 @@ export default {
                 task
                 .then(snapshot => snapshot.ref.getDownloadURL())
                 .then((url) => {
+                    self.loader=false
                     window.url=url
                     document.getElementById('uploadedimg').src = url;
                     self.source=url
@@ -84,7 +89,13 @@ export default {
 
 
 
-                
+      }
+      else{
+        this.$message({
+                    message: 'No photo selected. Please select atleast one photo',
+                    type: 'error'
+                  });
+      }   
         },
         saveMeta()
         {
@@ -100,3 +111,28 @@ export default {
     },
 };
 </script>
+<style>
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid blue;
+  border-right: 16px solid green;
+  border-bottom: 16px solid red;
+  border-left: 16px solid pink;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+</style>
