@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "node server.js"
+    "lint": "vue-cli-service lint"
   },
   "engines": {
     "node": "13.x.x"
