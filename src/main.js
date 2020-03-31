@@ -2,7 +2,7 @@ import Vue from 'vue'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import router from "./routes/index";
-import * as firebase from "firebase";
+import firebase from "firebase/app";
 import store from "./store";
 import locale from 'element-ui/lib/locale/lang/en'
 // import './assets/element-variables.scss'
