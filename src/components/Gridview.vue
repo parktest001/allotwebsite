@@ -75,7 +75,6 @@ export default {
                 self.jsoninfo=snap.val()
                 self.getSingleImage();
                 window.flag=true
-                console.log(snap.val())
                 })
   },
   methods: {
@@ -106,7 +105,6 @@ export default {
             
 
                 var img = document.getElementById(key.url);
-                console.log(img)
                 if(img.src != null){
                 img.src = key.url;
                 }

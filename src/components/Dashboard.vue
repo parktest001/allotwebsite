@@ -6,7 +6,7 @@
           <center>
           <div class="card-header"><h1>Dashboard</h1></div>
           <img src="../assets/caution.png" style="width:50px;height:50px;border:2px solid #5A487A;" /><br><br>
-          <div><p><h3>!! All images uploaded will be open to public and any user of this app can view your photos or download to their devices</h3></p></div><br>
+          <div><p>!! All images uploaded will be open to public and any user of this app can view your photos or download to their devices</p></div><br>
           <div class="card-body">
             <div v-if="user" class="alert alert-success" role="alert">
               <div>

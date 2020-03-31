@@ -10,7 +10,7 @@
               <div>    
             <div style="padding: 14px;">
               <div><h4>Enter Image Description:</h4></div>
-                <el-input style="width:1000px;border: 2px solid #5A487A" maxlength="100" v-model="description"></el-input>
+                <el-input placeholder="Please don't forget to describe the your photo before uploading !!!! (စ‿စ ) (⪴╰╯⪳) " style="width:1000px;border: 2px solid #5A487A" maxlength="100" v-model="description"></el-input>
                 <div class="bottom clearfix">
                 <div type="text" class="button"><h4>Image</h4></div>
                 </div>
@@ -71,7 +71,6 @@ export default {
                 task
                 .then(snapshot => snapshot.ref.getDownloadURL())
                 .then((url) => {
-                    console.log(url);
                     window.url=url
                     document.getElementById('uploadedimg').src = url;
                     self.source=url
@@ -81,7 +80,6 @@ export default {
                     type: 'success'
                   });
                 })
-                .catch(console.error);
 
 
 
@@ -90,7 +88,6 @@ export default {
         },
         saveMeta()
         {
-                var database = firebase.database();
                 var date=new Date()
                 var time=date.getTime()
                 firebase.database().ref(time).set({

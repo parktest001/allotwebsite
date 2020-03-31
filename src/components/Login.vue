@@ -1,8 +1,8 @@
 <template>
   <div style="padding-top:40px">
     <center>
-     <h3> <p>Login to Explore Photographs</p></h3>
-<p>Click pictures to satisfy you not to satisfy others <span class="blink">|</span></p> <br><br>
+     <h3> <p class="pa">Login to Explore Photographs</p></h3>
+<p class="pa">Click pictures to satisfy you not to satisfy others <span class="blink">|</span></p> <br><br>
     
     <img src="../assets/google-logo.png" style="width:50px;height:50px;border:2px solid #5A487A;" /><br><br>
         <el-button @click="submit()" style="height:55px;width:300px" type="primary" plain><div style="font-size:20px">Sign in with Google</div></el-button>
@@ -80,7 +80,7 @@ body{
   padding-top: 10px;
 } 
 
-p{
+.pa{
   color: black; 
   font-family: "Courier";
   font-size: 20px;
@@ -91,11 +91,11 @@ p{
   animation: type 4s steps(60, end); 
 }
 
-p:nth-child(2){
+.pa:nth-child(2){
   animation: type2 8s steps(60, end);
 }
 
-p a{
+.pa a{
   color: black;
   text-decoration: none;
 }
