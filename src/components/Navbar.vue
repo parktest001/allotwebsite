@@ -1,30 +1,23 @@
 <template>
-  <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="background-color: #B9ABD3;border: 2px solid #5A487A">
-    <div class="container" style="height:80px;">
-      
-      <router-link to="/login" class="navbar-brand" style="padding-left:20px;float:left"><img @click="loginpage()" src="../assets/home.png" style="width:30px;height:30px;padding-top:20px" /></router-link>
-   
-                      <div style="float:left;padding-left:580px;font-size:40px;padding-top:20px;font-weight:bold">Photo Grid</div>
+  <div style="height:10px">
+    <el-button class="menuButton">JOIN AS VENDOR</el-button>
+   <img class="imageDiv" src="../assets/Logo.svg"/>
 
-            <div v-if="user.loggedIn" class="nav-item" style="float:right;padding-right:20px;padding-top:30px">Hi! {{user.data.displayName}}</div>
-          
-      <span @click="goBack()" style="float:right;padding-right:20px;padding-top:5px;cursor: pointer;"><h2>Back</h2></span><br>
-      
-        
-    
-        
-    </div >
-    <div v-if="user.loggedIn">
-    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-  <el-menu-item index="1"><span class="menuicon"><router-link to="/dashboard"  style="text-decoration: none;">Dashboard</router-link></span></el-menu-item>
-    <el-menu-item index="2"><span class="menuicon"><router-link to="/upload"  style="text-decoration: none;">Upload Photo</router-link></span></el-menu-item>
-  <el-menu-item index="3"><span class="menuicon"><router-link to="/gridview"  style="text-decoration: none;">View Photos</router-link></span></el-menu-item>
-  <el-menu-item @click="handleAbout()" index="4"><span class="menuicon">About</span></el-menu-item>
-  <div style="float:right;padding-right:20px;padding-top:10px;"><el-button style="border:2px solid #5A487A" v-if="user.loggedIn" class="nav-link" @click.prevent="signOut" >Sign out</el-button></div>
+      <el-menu
+  :default-active="activeIndex2"
+  class="el-menu"
+  mode="horizontal"
+  @select="handleSelect"
+  background-color="#fcfcfc"
+  text-color="#3400C5"
+  active-text-color="#3400C5"
 
-</el-menu>
-    </div>
-  </nav>
+  
+  >
+  <el-menu-item index="1" class="menuItem">FEATURES</el-menu-item>
+ 
+  <el-menu-item index="2" class="menuItem">DOWNLOAD</el-menu-item>
+</el-menu></div>
 </template>
 <script>
 import { mapGetters } from "vuex";
@@ -64,9 +57,43 @@ export default {
 };
 </script>
 <style>
-.menuicon
-{
-  font-size: 18px
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+html, body {
+  font-family: 'Open Sans', Open+Sans;
 }
 
+#app {
+  font-family: 'Open Sans', Open+Sans;
+}
+.el-menu
+{
+  float:right;
+  border: none;
+  border-bottom: 0 none !important;
+  box-shadow: none;
+}
+.menuItem
+{
+
+  font-size:1.563vw;
+  font-weight: 100;
+}
+.menuButton
+{
+  font-size:0.938vw;
+  margin-top: 0.75vw;
+  margin-right: 7.5vw;
+  margin-left: 2.6vw;
+  float:right;
+  width: 11.667vw;
+  color:#ffffff;
+  background-color: #3400C5;
+}
+.imageDiv
+{
+  float: left;
+  width: 10vw;
+  height: 5.9259vh;
+  margin-left: 7.5vw;
+}
 </style>

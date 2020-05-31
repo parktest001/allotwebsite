@@ -2,7 +2,7 @@
   "name": "element-vue-example",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
+  "scripts": {    
     "lint": "vue-cli-service lint"
   },
   "engines": {

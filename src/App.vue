@@ -15,5 +15,12 @@ export default {
 };
 </script>
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+html, body {
+  font-family: 'Open Sans', Open+Sans;
+}
 
+#app {
+  font-family: 'Open Sans', Open+Sans;
+}
 </style>
