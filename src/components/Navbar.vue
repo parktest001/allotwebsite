@@ -132,4 +132,147 @@ html, body {
   margin-left: 7.5vw;
 }
 }
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .el-menu
+{
+  float:right;
+  border: none;
+  border-bottom: 0 none !important;
+  box-shadow: none;
+}
+.menuItem
+{
+
+  font-size:1.563vw;
+  font-weight: 100;
+}
+.menuButton
+{
+  font-size:0.938vw;
+  margin-top: 0.75vw;
+  margin-right: 7.5vw;
+  margin-left: 2.6vw;
+  float:right;
+  width: 11.667vw;
+  color:#ffffff;
+  background-color: #3400C5;
+}
+.imageDiv
+{
+  float: left;
+  width: 10vw;
+  height: 5.9259vh;
+  margin-left: 7.5vw;
+}
+  
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .el-menu
+{
+  float:right;
+  border: none;
+  border-bottom: 0 none !important;
+  box-shadow: none;
+}
+.menuItem
+{
+
+  font-size:1.563vw;
+  font-weight: 100;
+}
+.menuButton
+{
+  font-size:0.938vw;
+  margin-top: 0.75vw;
+  margin-right: 7.5vw;
+  margin-left: 2.6vw;
+  float:right;
+  width: 11.667vw;
+  color:#ffffff;
+  background-color: #3400C5;
+}
+.imageDiv
+{
+  float: left;
+  width: 10vw;
+  height: 5.9259vh;
+  margin-left: 7.5vw;
+}
+  
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+  .el-menu
+{
+  float:right;
+  border: none;
+  border-bottom: 0 none !important;
+  box-shadow: none;
+}
+.menuItem
+{
+
+  font-size:1.563vw;
+  font-weight: 100;
+}
+.menuButton
+{
+  font-size:0.938vw;
+  margin-top: 1.75vw;
+  margin-right: 7.5vw;
+  margin-left: 2.6vw;
+  float:right;
+  width: 11.667vw;
+  color:#ffffff;
+  background-color: #3400C5;
+}
+.imageDiv
+{
+  margin-top: 2.75vw;
+  float: left;
+  width: 10vw;
+  height: 5.9259vh;
+  margin-left: 7.5vw;
+}
+}
+
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .el-menu
+{
+  float:right;
+  border: none;
+  border-bottom: 0 none !important;
+  box-shadow: none;
+}
+.menuItem
+{
+
+  font-size:1.563vw;
+  font-weight: 100;
+}
+.menuButton
+{
+  font-size:0.938vw;
+  margin-top: 1.75vw;
+  margin-right: 7.5vw;
+  margin-left: 1.6vw;
+  float:right;
+  color:#ffffff;
+  background-color: #3400C5;
+}
+.imageDiv
+{
+  margin-top: 2.75vw;
+  float: left;
+  width: 10vw;
+  height: 5.9259vh;
+  margin-left: 7.5vw;
+}
+  
+}
+
 </style>
