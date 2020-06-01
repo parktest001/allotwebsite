@@ -65,6 +65,7 @@ html, body {
 #app {
   font-family: 'Open Sans', Open+Sans;
 }
+@media (min-width: 1281px) {
 .el-menu
 {
   float:right;
@@ -95,5 +96,40 @@ html, body {
   width: 10vw;
   height: 5.9259vh;
   margin-left: 7.5vw;
+}
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  .el-menu
+{
+  float:right;
+  border: none;
+  border-bottom: 0 none !important;
+  box-shadow: none;
+}
+.menuItem
+{
+
+  font-size:1.563vw;
+  font-weight: 100;
+}
+.menuButton
+{
+  font-size:0.938vw;
+  margin-top: 1.75vh;
+  margin-right: 7.5vw;
+  margin-left: 0.6vw;
+  float:right;
+  width: 16.667vw;
+  color:#ffffff;
+  background-color: #3400C5;
+}
+.imageDiv
+{
+  margin-top: 0.75vh;
+  float: left;
+  width: 10vw;
+  height: 5.9259vh;
+  margin-left: 7.5vw;
+}
 }
 </style>

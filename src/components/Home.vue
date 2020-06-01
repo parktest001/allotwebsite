@@ -11,8 +11,8 @@
   <div class="descQr">
     <p>Scan this code to download the app</p>
   </div>
-  <div class="qr">
-    <img src="../assets/QR.svg">
+  <div >
+    <img class="qr" src="../assets/QR.svg">
   </div>
   </div>
   <div class="imgRight">
@@ -23,24 +23,24 @@
   </div>
 <div class="mainCard">
 <div class = "cardItem">
-    <div style="float:left;margin-left:1.667vw;margin-top: 3.7037vh;background-color:#3400C5;width:2.083vw;height:3.7037vh;"></div>
-    <div style="float:left;margin-top:4vh;margin-left:1.250vw;color:#3400C5;font-size:1.458vw;font-weight:600">Search</div>
-    <div style="width:17.500vw;margin-top:10.3703vh;margin-left:1.667vw;margin-right:1.667vw;font-size:1.042vw;text-alig">You can now search for a free parking space at your destination, at your own comfort, and eliminate the frustration filled parking search once you reach your destination.</div>
+    <div class="cardView"></div>
+    <div class="cardHead">Search</div>
+    <div class="cardDesc">You can now search for a free parking space at your destination, at your own comfort, and eliminate the frustration filled parking search once you reach your destination.</div>
 </div>
 <div class = "cardItem" style="margin-left:0.833vw">
-      <div style="float:left;margin-left:1.667vw;margin-top: 3.7037vh;background-color:#3400C5;width:2.083vw;height:3.7037vh;"></div>
-      <div style="float:left;margin-top:4vh;margin-left:1.250vw;color:#3400C5;font-size:1.458vw;font-weight:600">Park Now</div>
-      <div style="width:17.500vw;margin-top:10.3703vh;margin-left:1.667vw;margin-right:1.667vw;font-size:1.042vw">This feature lets you book a slot <br>for your vehicle right away, when <br>you are close to or already at your<br> destination. You will receive a QR <br>code that can be used at the <br>parking. The QR code will be valid <br>only for 15 minutes.</div>
+      <div class="cardView"></div>
+      <div class="cardHead">Park Now</div>
+      <div class="cardDesc">This feature lets you book a slot <br>for your vehicle right away, when <br>you are close to or already at your<br> destination. You will receive a QR <br>code that can be used at the <br>parking. The QR code will be valid <br>only for 15 minutes.</div>
 </div>
 <div class = "cardItem" style="margin-left:0.833vw">
-      <div style="float:left;margin-left:1.667vw;margin-top: 3.7037vh;background-color:#3400C5;width:2.083vw;height:3.7037vh;"></div>
-      <div style="float:left;margin-top:4vh;margin-left:1.250vw;color:#3400C5;font-size:1.458vw;font-weight:600">Park Later</div>
-      <div style="width:17.500vw;margin-top:10.3703vh;margin-left:1.667vw;margin-right:1.667vw;font-size:1.042vw">The Park Later feature is to book a slot in advance, at least 20 mins. Once a slot has been requested at the desired parking, your request will be queued and you will receive the confirmation QR code 15 minutes prior your requested time.</div>
+      <div class="cardView"></div>
+      <div class="cardHead">Park Later</div>
+      <div class="cardDesc">The Park Later feature is to book a slot in advance, at least 20 mins. Once a slot has been requested at the desired parking, your request will be queued and you will receive the confirmation QR code 15 minutes prior your requested time.</div>
 </div>
 <div class = "cardItem" style="margin-left:0.833vw">
-      <div style="float:left;margin-left:1.667vw;margin-top: 3.7037vh;background-color:#3400C5;width:2.083vw;height:3.7037vh;"></div>
-      <div style="float:left;margin-top:4vh;margin-left:1.250vw;color:#3400C5;font-size:1.458vw;font-weight:600">Park and Pay</div>
-      <div style="width:17.500vw;margin-top:10.3703vh;margin-left:1.667vw;margin-right:1.667vw;font-size:1.042vw">Once you have parked your <br>vehicle, the metering starts and<br> upon completing your parking, the <br>bill details are available to you in<br> the app. You can pay using our in-<br>app UPI integration. You can also <br>choose to pay using cash. </div>
+      <div class="cardView"></div>
+      <div class="cardHead">Park and Pay</div>
+      <div class="cardDesc">Once you have parked your <br>vehicle, the metering starts and<br> upon completing your parking, the <br>bill details are available to you in<br> the app. You can pay using our in-<br>app UPI integration. You can also <br>choose to pay using cash. </div>
 </div>
 
 </div>
@@ -105,10 +105,8 @@
   </div>
 <center>
   <div class="downloadQr">
-  <div style ="height: 25vh;font-weight:600">Download our app for free <br>and have a better parking experience.</div>
-  <div class="qrBottom">
-    <img src="../assets/QR.svg">
-  </div>
+  <div class="innerDownloadQr">Download our app for free <br>and have a better parking experience.</div>
+    <img class="qrBottom" src="../assets/QR.svg">
   <div class="descQrBottom">
     <p style="font-weight:600;font-weight:600">Scan this code to download the app</p>
   </div>
@@ -125,6 +123,7 @@
   <div style="float:left;margin-left:3.801vw">Terms of Service</div>
 
 </div>
+<br>
 <center><div class="footerSocial">©2020 Allot Inc.</div></center>
 
 </div>
@@ -134,7 +133,11 @@
 
 import { mapGetters } from "vuex";
 import firebase from "firebase";
+let vh = window.innerHeight * 0.01;
+// Then we set the value in the --vh custom property to the root of the document
+document.documentElement.style.setProperty('--vh', `${vh}px`);
 export default {
+  
   computed: {
     ...mapGetters({
 // map `this.user` to `this.$store.getters.user`
@@ -152,18 +155,52 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Manrope');
 html, body {
   font-family: 'Open Sans', Open+Sans;
+
 }
 
 #app {
   font-family: 'Open Sans', Open+Sans;
 }
-.main
-{
-  width: 100vw;
-}
-.menuicon
+
+
+
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+  
+  .menuicon
 {
   font-size: 18px
+}
+.cardView
+{
+  float:left;
+  margin-left:1.667vw;
+  margin-top: 3.7037vh;
+  background-color:#3400C5;
+  width:2.083vw;
+  height:3.7037vh;
+}
+.cardHead
+{
+  float:left;
+  margin-top:4vh;
+  margin-left:1.250vw;
+  color:#3400C5;
+  font-size:1.458vw;
+  font-weight:600
+}
+.cardDesc
+{
+  width:17.500vw;
+  margin-top:10.3703vh;
+  margin-left:1.667vw;
+  margin-right:1.667vw;
+  font-size:1.042vw
 }
 .mainCard
 {
@@ -171,11 +208,11 @@ html, body {
   margin-right: 7.5vw;
   margin-top: 6.4814vh;
   height: 34.8148vh;
-  width: 100vw;
+  width: 87.5vw;
 }
 .cardItem
 {
-    float: left;
+  float: left;
   width: 20.833vw;
   height:  34.8148vh;
   background-color: #ffffff;
@@ -203,6 +240,7 @@ html, body {
 {
   font-family: 'Manrope', Manrope;
   width: 38.438vw;
+  margin-right:4.5vw;
   height: 19.7222vh;
   font-size: 4.167vw;
 }
@@ -231,8 +269,8 @@ html, body {
 }
 .featureHeading
 {
+  width: 100%;
   font-family: 'Manrope', Manrope;
-  width: 100vw;
   margin-top: 11.8518vh;
   display:inline-block;
   height: 10.0925vh;
@@ -380,7 +418,6 @@ html, body {
   float: right;
   height: 56.2962vh;
   width: 33.750vw;
-  margin-left: 8.750vw;
   margin-right: 7.5vw;
   background-color: #F5F4F8;
 }
@@ -415,6 +452,11 @@ html, body {
   font-size: 2.917vw;
   color: #000000;
 }
+.innerDownloadQr
+{
+  height: 25vh;
+  font-weight:600;
+}
 .qrBottom
 {
   height: 24.9074;
@@ -435,7 +477,7 @@ html, body {
   margin-top: 26.5740vh;
   background-color: #3400c5;
   height:74.8148vh;
-  width: 100vw;
+  width: 100%;
   display:inline-block;
 }
 .footerLogo
@@ -458,6 +500,335 @@ html, body {
 }
 .footerSocial
 {
-  
+  font-size: 10vw;
+  color:#ffffff;
+}
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .cardView
+{
+  float:left;
+  margin-left:1.667vw;
+  margin-top:  2.08333vh;
+  background-color:#3400C5;
+  width:2.083vw;
+  height: 1.2vh;
+}
+.cardHead
+{
+  float:left;
+  margin-top: 2.28333vh;
+  margin-left:1.250vw;
+  color:#3400C5;
+  font-size:1.458vw;
+  font-weight:600
+}
+.cardDesc
+{
+  width:17.500vw;
+  margin-top:5.8333vh;
+  margin-left:1.667vw;
+  margin-right:1.667vw;
+  font-size:1.042vw
+}
+  .menuicon
+{
+  font-size: 18px
+}
+.mainCard
+{
+  margin-left: 7.5vw;
+  margin-right: 7.5vw;
+  margin-top: 3.6458vh;
+  height: 19.5833vh;
+  width: 87.5vw;
+}
+.cardItem
+{
+  float: left;
+  width: 20.833vw;
+  height:  12.5833vh;
+  background-color: #ffffff;
+}
+.imgRight
+{
+  float: right;
+  background-color: #d9d9d9;
+  width: 40.938vw;
+  height: 34vh;
+}
+.mainDiv
+{
+  margin-left: 7.5vw;
+  margin-right: 7.5vw;
+  margin-top: 5.41666vh;
+  display:inline-block;
+}
+.subDiv
+{
+  float: left;
+}
+.desc
+{
+  font-family: 'Manrope', Manrope;
+  width: 38.438vw;
+  height: 9.5833vh;
+  font-size: 4.167vw;
+}
+.descBelow
+{
+  width: 35vw;
+  height: 6.14583vh;
+  font-size: 1.667vw;
+  color: #000000;
+}
+.descQr
+{
+  font-family: 'Manrope', Manrope;
+  width: 35vw;
+  height: 1.1979vh;
+  margin-top: 4.6354vh;
+  font-size: 1.198vw;
+  color: #000000;
+}
+.qr
+{
+  width: 10.833vw;
+  height: 10.8333vh;
+  color: #707070;
+}
+.featureHeading
+{
+  width: 100%;
+  font-family: 'Manrope', Manrope;
+  margin-top: 2.6041vh;
+  display:inline-block;
+  height: 10.0925vh;
+  font-size: 4.167vw;
+  color: #000000;
+}
+.featureBody
+{
+  height: 12.0833vh;
+  margin-left: 7.5vw;
+  margin-right: 7.5vw;
+  display:inline-block;
+  font-size: 4.167vw;
+  color: #707070;
+}
+.featureImage
+{
+  float: left;
+  height: 12.0833vh;
+  width: 27.083vw;
+  background-color: #F5F4F8;
+
+}
+.featureImageMain
+{
+  height: 7.583vh;
+  width: 19.583vw;
+  margin-left: 3.750vw;
+  background-color: #F5F4F8;
+}
+.featureDesc1
+{
+    font-family: 'Manrope', Manrope;
+    margin-top: 1vh;
+    margin-left: 3.3333vw;
+    height: 5.0925vh;
+    width: 25.729vw;
+    font-size: 2.083vw;
+    color:#3400C5;
+}
+.featureDesc2
+{
+    margin-left: 3.3333vw;
+    height: 17.5925vh;
+    width: 38.750vw;
+    font-size: 1.458vw;
+}
+.bookBody
+{
+  height: 12.0833vh;
+  margin-left: 15.8333vw;
+  display:inline-block;
+  font-size: 4.167vw;
+  color: #707070;
+}
+.bookImage
+{
+  margin-right: 7.5vw;
+  float: right;
+  height: 12.0833vh;
+  width: 27.083vw;
+  background-color: #F5F4F8;
+
+}
+.bookImageMain
+{
+  height: 7.583vh;
+  width: 19.583vw;
+  margin-left: 3.750vw;
+  background-color: #F5F4F8;
+}
+.bookDesc1
+{
+    font-family: 'Manrope', Manrope;
+    margin-top: 1vh;
+    margin-right: 3.3333vw;
+    height: 5.0925vh;
+    width: 25.729vw;
+    font-size: 2.083vw;
+    color:#3400C5;
+}
+.bookDesc2
+{
+    margin-right: 3.3333vw;
+    height: 17.5925vh;
+    width: 38.750vw;
+    font-size: 1.458vw;
+}
+.payBody
+{
+  height: 12.0833vh;
+  margin-left: 7.5vw;
+  margin-right: 7.5vw;
+  display:inline-block;
+  font-size: 4.167vw;
+  color: #707070;
+}
+.payImage
+{
+  float: left;
+  height: 12.0833vh;
+  width: 27.083vw;
+  background-color: #F5F4F8;
+
+}
+.payImageMain
+{
+  height: 7.583vh;
+  width: 19.583vw;
+  margin-left: 3.750vw;
+  background-color: #F5F4F8;
+}
+.payDesc1
+{
+    font-family: 'Manrope', Manrope;
+    margin-top: 1vh;
+    margin-left: 3.3333vw;
+    height: 5.0925vh;
+    width: 25.729vw;
+    font-size: 2.083vw;
+    color:#3400C5;
+}
+.payDesc2
+{
+    margin-left: 3.3333vw;
+    height: 17.5925vh;
+    width: 38.750vw;
+    font-size: 1.458vw;
+}
+.joinBody
+{
+  margin-left: 7.5vw;
+  height: 20.2962vh;
+  display:inline-block;
+  font-size: 4.167vw;
+  color: #707070;
+}
+.joinImageMain
+{
+  margin-top: 6.6666vh;
+  float: right;
+  height: 20.2962vh;
+  width: 33.750vw;
+  margin-right: 7.5vw;
+  background-color: #F5F4F8;
+}
+.joinDesc1
+{
+    color:#3400c5;
+    font-family: 'Manrope', Manrope;
+    margin-top: 10.3703vh;
+    height: 3.4444vh;
+    width: 42.5vw;
+    font-size: 2.917vw;
+}
+.joinDesc2
+{
+    margin-top: 3.2407vh;
+    height: 4.59vh;
+    width: 38.750vw;
+    font-size: 1.563vw;
+    color:#000000
+}
+.menuButtonNew
+{
+  font-family: 'Manrope', Manrope;
+  background-color: #ffffff;
+  font-size:0.938vw;
+}
+.downloadQr
+{
+  text-align: center;
+  margin-top: 16.4629vh;
+  width: 53.333vw;
+  font-size: 2.917vw;
+  color: #000000;
+}
+.innerDownloadQr
+{
+  height: 10vh;
+  font-weight:600;
+}
+.qrBottom
+{
+  height: 14.9074vh;
+  color: #707070;
+  margin: auto;
+}
+.descQrBottom
+{
+  color:#3400C5;
+  font-family: 'Manrope', Manrope;
+  height: 2.9629vh;
+  font-size: 1.198vw;
+  margin: auto;
+  text-align: center;
+}
+.footer
+{
+  margin-top: 8.5740vh;
+  background-color: #3400c5;
+  height:27.8148vh;
+  width: 100%;
+  display:inline-block;
+}
+.footerLogo
+{
+  margin-top: 1.2407vh;
+  height: 10vh;
+  width: 13.696vw;
+}
+.footerText
+{
+  color:#ffffff;
+  font-size: 2.083vw;
+  margin-top: 1.2777vh;
+}
+.footerNav
+{
+  color:#ffffff;
+  margin-top: 2.8703vh;
+  font-size: 1.042vw;
+}
+.footerSocial
+{
+  color:#ffffff;
+  font-size:2.5vw;
+}
 }
 </style>
