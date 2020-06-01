@@ -1,5 +1,5 @@
 <template>
-  <div style="height:10px">
+  <div style="margin-top:8vh; margin-right: 1vw;" class="mainNav">
     <el-button class="menuButton">JOIN AS VENDOR</el-button>
    <img class="imageDiv" src="../assets/Logo.svg"/>
 
@@ -66,6 +66,10 @@ html, body {
   font-family: 'Open Sans', Open+Sans;
 }
 @media (min-width: 1281px) {
+  .mainNav
+  {
+    
+  }
 .el-menu
 {
   float:right;
@@ -95,7 +99,8 @@ html, body {
   float: left;
   width: 10vw;
   height: 5.9259vh;
-  margin-left: 7.5vw;
+  margin-top: 1vw;
+  margin-left: 7vw;
 }
 }
 @media (min-width: 320px) and (max-width: 480px) {

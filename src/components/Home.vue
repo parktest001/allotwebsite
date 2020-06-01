@@ -22,22 +22,22 @@
     <center><p style="font-weight:bold;">Features</p></center>
   </div>
 <div class="mainCard">
-<div class = "cardItem">
+<div class = "cardItem" style="  box-shadow: 2px 2px 2px 2px #d0d0d0;">
     <div class="cardView"></div>
     <div class="cardHead">Search</div>
     <div class="cardDesc">You can now search for a free parking space at your destination, at your own comfort, and eliminate the frustration filled parking search once you reach your destination.</div>
 </div>
-<div class = "cardItem" style="margin-left:0.833vw">
+<div class = "cardItem" style="margin-left:0.833vw;box-shadow: 2px 2px 2px 2px #d0d0d0;">
       <div class="cardView"></div>
       <div class="cardHead">Park Now</div>
       <div class="cardDesc">This feature lets you book a slot <br>for your vehicle right away, when <br>you are close to or already at your<br> destination. You will receive a QR <br>code that can be used at the <br>parking. The QR code will be valid <br>only for 15 minutes.</div>
 </div>
-<div class = "cardItem" style="margin-left:0.833vw">
+<div class = "cardItem" style="margin-left:0.833vw;box-shadow: 2px 2px 2px 2px #d0d0d0;">
       <div class="cardView"></div>
       <div class="cardHead">Park Later</div>
       <div class="cardDesc">The Park Later feature is to book a slot in advance, at least 20 mins. Once a slot has been requested at the desired parking, your request will be queued and you will receive the confirmation QR code 15 minutes prior your requested time.</div>
 </div>
-<div class = "cardItem" style="margin-left:0.833vw">
+<div class = "cardItem" style="margin-left:0.833vw;box-shadow: 2px 2px 2px 2px #d0d0d0;">
       <div class="cardView"></div>
       <div class="cardHead">Park and Pay</div>
       <div class="cardDesc">Once you have parked your <br>vehicle, the metering starts and<br> upon completing your parking, the <br>bill details are available to you in<br> the app. You can pay using our in-<br>app UPI integration. You can also <br>choose to pay using cash. </div>
@@ -220,6 +220,12 @@ html, body {
   width: 20.833vw;
   height:  34.8148vh;
   background-color: #ffffff;
+}
+.cardItem:hover {
+  -ms-transform: scale(1); /* IE 9 */
+  -webkit-transform: scale(1); /* Safari 3-8 */
+  transform: scale(1.2); 
+  transition: 0.5s;
 }
 .imgRight
 {
