@@ -176,6 +176,10 @@ html, body {
 {
   font-size: 18px
 }
+.main
+{
+  margin: 0;
+}
 .cardView
 {
   float:left;
