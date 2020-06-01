@@ -319,6 +319,7 @@ html, body {
     height: 17.5925vh;
     width: 38.750vw;
     font-size: 1.458vw;
+    color:#000000;
 }
 .bookBody
 {
@@ -360,6 +361,7 @@ html, body {
     margin-right: 3.3333vw;
     height: 17.5925vh;
     width: 38.750vw;
+    color:#000000;
     font-size: 1.458vw;
 }
 .payBody
@@ -402,6 +404,7 @@ html, body {
     margin-left: 3.3333vw;
     height: 17.5925vh;
     width: 38.750vw;
+    color:#000000;
     font-size: 1.458vw;
 }
 .joinBody
@@ -648,6 +651,7 @@ html, body {
     height: 17.5925vh;
     width: 38.750vw;
     font-size: 1.458vw;
+    color:#000000;
 }
 .bookBody
 {
@@ -688,6 +692,7 @@ html, body {
     margin-right: 3.3333vw;
     height: 17.5925vh;
     width: 38.750vw;
+    color:#000000;
     font-size: 1.458vw;
 }
 .payBody
@@ -729,6 +734,7 @@ html, body {
     margin-left: 3.3333vw;
     height: 17.5925vh;
     width: 38.750vw;
+    color:#000000;
     font-size: 1.458vw;
 }
 .joinBody
@@ -984,6 +990,7 @@ html, body {
     margin-left: 3.3333vw;
     height: 17.5925vh;
     width: 38.750vw;
+    color:#000000;
     font-size: 1.458vw;
 }
 .bookBody
@@ -1026,6 +1033,7 @@ html, body {
     margin-right: 3.3333vw;
     height: 17.5925vh;
     width: 38.750vw;
+    color:#000000;
     font-size: 1.458vw;
 }
 .payBody
@@ -1068,6 +1076,7 @@ html, body {
     margin-left: 3.3333vw;
     height: 17.5925vh;
     width: 38.750vw;
+    color:#000000;
     font-size: 1.458vw;
 }
 .joinBody
@@ -1317,6 +1326,7 @@ html, body {
     margin-left: 3.3333vw;
     height: 17.5925vh;
     width: 38.750vw;
+    color:#000000;
     font-size: 1.458vw;
 }
 .bookBody
@@ -1359,6 +1369,7 @@ html, body {
     margin-right: 3.3333vw;
     height: 17.5925vh;
     width: 38.750vw;
+    color:#000000;
     font-size: 1.458vw;
 }
 .payBody
@@ -1401,6 +1412,7 @@ html, body {
     margin-left: 3.3333vw;
     height: 17.5925vh;
     width: 38.750vw;
+    color:#000000;
     font-size: 1.458vw;
 }
 .joinBody
@@ -1652,6 +1664,7 @@ html, body {
     margin-left: 3.3333vw;
     height: 17.5925vh;
     width: 38.750vw;
+    color:#000000;
     font-size: 1.458vw;
 }
 .bookBody
@@ -1694,6 +1707,7 @@ html, body {
     margin-right: 3.3333vw;
     height: 17.5925vh;
     width: 38.750vw;
+    color:#000000;
     font-size: 1.458vw;
 }
 .payBody
@@ -1736,6 +1750,7 @@ html, body {
     margin-left: 3.3333vw;
     height: 17.5925vh;
     width: 38.750vw;
+    color:#000000;
     font-size: 1.458vw;
 }
 .joinBody
@@ -1987,6 +2002,7 @@ html, body {
     margin-left: 3.3333vw;
     height: 17.5925vh;
     width: 38.750vw;
+    color:#000000;
     font-size: 1.458vw;
 }
 .bookBody
@@ -2029,6 +2045,7 @@ html, body {
     margin-right: 3.3333vw;
     height: 17.5925vh;
     width: 38.750vw;
+    color:#000000;
     font-size: 1.458vw;
 }
 .payBody
@@ -2071,6 +2088,7 @@ html, body {
     margin-left: 3.3333vw;
     height: 17.5925vh;
     width: 38.750vw;
+    color:#000000;
     font-size: 1.458vw;
 }
 .joinBody
