@@ -57,14 +57,14 @@
   </div>
   </div>
   <svg width="75vw" height="2vh" viewBox="0 0 12vw 0">
-    <line x1="20vw" x2="20vw" y1="60" y2="0" stroke="#3400C5" stroke-width="0.1vw" stroke-linecap="square" stroke-dasharray="10, 15"/>
+    <line x1="20vw" x2="20vw" y1="0" y2="60" stroke="#3400C5" stroke-width="0.1vw" stroke-linecap="square" stroke-dasharray="5, 5"/>
 </svg>
   <svg width="75vw" height="1.5vh" viewBox="0 0 12vw 0">
 
     <line x1="20vw" x2="100vw" y1="0" y2="0" stroke="#3400C5" stroke-width="0.2vw" stroke-linecap="square" stroke-dasharray="5, 10"/>
 </svg>
-<svg width="75.5vw" height="2vh" viewBox="0 0 12vw 0">
-    <line x1="75vw" x2="75vw" y1="60" y2="0" stroke="#3400C5" stroke-width="0.1w" stroke-linecap="square" stroke-dasharray="10, 15"/>
+<svg width="75vw" height="2vh" viewBox="0 0 12vw 0">
+    <line x1="75vw" x2="75vw" y1="0" y2="60" stroke="#3400C5" stroke-width="0.05w" stroke-linecap="square" stroke-dasharray="5, 5"/>
 </svg>
   <div class="bookBody">
     <div class="bookImage">
@@ -76,7 +76,7 @@
     </div>
   </div>
   <svg width="75.5vw" height="2vh" viewBox="0 0 12vw 0">
-    <line x1="75vw" x2="75vw" y1="60" y2="0" stroke="#3400C5" stroke-width="0.1vw" stroke-linecap="square" stroke-dasharray="10, 15"/>
+    <line x1="75vw" x2="75vw" y1="0" y2="60" stroke="#3400C5" stroke-width="0.1vw" stroke-linecap="square" stroke-dasharray="5, 5"/>
   </svg>
   
   <svg width="75vw" height="1.5vh" viewBox="0 0 12vw 0">
@@ -84,7 +84,7 @@
     <line x1="20vw" x2="100vw" y1="0" y2="0" stroke="#3400C5" stroke-width="0.2vw" stroke-linecap="square" stroke-dasharray="5, 10"/>
 </svg>
  <svg width="75vw" height="2vh" viewBox="0 0 12vw 0">
-    <line x1="20vw" x2="20vw" y1="60" y2="0" stroke="#3400C5" stroke-width="0.1vw" stroke-linecap="square" stroke-dasharray="10, 15"/>
+    <line x1="20vw" x2="20vw" y1="0" y2="60" stroke="#3400C5" stroke-width="0.1vw" stroke-linecap="square" stroke-dasharray="5, 5"/>
 </svg>
   <div class="payBody">
     <div class="payImage">
