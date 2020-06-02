@@ -1,0 +1,13 @@
+<svg id="Layer_6" data-name="Layer 6" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="SVGID" width="48" height="48" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_18" data-name="Group 18" clip-path="url(#clip-path)">
+    <path id="Path_9" data-name="Path 9" d="M13.72,2A9.74,9.74,0,0,0,4,11.72C4,17.08,13.72,30,13.72,30s9.72-12.92,9.72-18.28A9.74,9.74,0,0,0,13.72,2Zm0,14a4.26,4.26,0,1,1,3.054-1.269A4.28,4.28,0,0,1,13.72,16Z" transform="translate(4 2)" fill="#efedf9"/>
+    <path id="Path_10" data-name="Path 10" d="M16.5,28.5a10,10,0,1,1,10-10A10,10,0,0,1,16.5,28.5Zm0-18a8,8,0,1,0,8,8A8,8,0,0,0,16.5,10.5Z" transform="translate(6.5 8.5)" fill="#3400c5"/>
+    <path id="Path_11" data-name="Path 11" d="M23.327,27.327a.98.98,0,0,1-.7-.3l-8.66-8.64a1,1,0,0,1,1.42-1.42l8.66,8.66a1,1,0,0,1,0,1.4A1.02,1.02,0,0,1,23.327,27.327Z" transform="translate(13.673 16.673)" fill="#3400c5"/>
+    <path id="Path_12" data-name="Path 12" d="M10.27,17.73h-2v-1a6.46,6.46,0,0,1,6.46-6.46h1v2h-1a4.46,4.46,0,0,0-4.46,4.46Z" transform="translate(8.27 10.27)" fill="#00c4c4"/>
+  </g>
+</svg>

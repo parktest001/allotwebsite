@@ -23,22 +23,22 @@
   </div>
 <div class="mainCard">
 <div class = "cardItem" style="  box-shadow: 2px 2px 2px 2px #d0d0d0;">
-    <div class="cardView"></div>
+   <img class="cardView" src="../assets/searchIcon.svg"/>
     <div class="cardHead">Search</div>
     <div class="cardDesc">You can now search for a free parking space at your destination, at your own comfort, and eliminate the frustration filled parking search once you reach your destination.</div>
 </div>
 <div class = "cardItem" style="margin-left:0.833vw;box-shadow: 2px 2px 2px 2px #d0d0d0;">
-      <div class="cardView"></div>
+   <img class="cardView" src="../assets/parkIcon.svg"/>
       <div class="cardHead">Park Now</div>
       <div class="cardDesc">This feature lets you book a slot <br>for your vehicle right away, when <br>you are close to or already at your<br> destination. You will receive a QR <br>code that can be used at the <br>parking. The QR code will be valid <br>only for 15 minutes.</div>
 </div>
 <div class = "cardItem" style="margin-left:0.833vw;box-shadow: 2px 2px 2px 2px #d0d0d0;">
-      <div class="cardView"></div>
+   <img class="cardView" src="../assets/parkLaterIcon.svg"/>
       <div class="cardHead">Park Later</div>
       <div class="cardDesc">The Park Later feature is to book a slot in advance, at least 20 mins. Once a slot has been requested at the desired parking, your request will be queued and you will receive the confirmation QR code 15 minutes prior your requested time.</div>
 </div>
 <div class = "cardItem" style="margin-left:0.833vw;box-shadow: 2px 2px 2px 2px #d0d0d0;">
-      <div class="cardView"></div>
+   <img class="cardView" src="../assets/payIcon.svg"/>
       <div class="cardHead">Park and Pay</div>
       <div class="cardDesc">Once you have parked your <br>vehicle, the metering starts and<br> upon completing your parking, the <br>bill details are available to you in<br> the app. You can pay using our in-<br>app UPI integration. You can also <br>choose to pay using cash. </div>
 </div>
@@ -56,16 +56,7 @@
 
   </div>
   </div>
-  <svg width="75vw" height="2vh" viewBox="0 0 12vw 0">
-    <line x1="20vw" x2="20vw" y1="0" y2="60" stroke="#3400C5" stroke-width="0.1vw" stroke-linecap="square" stroke-dasharray="5, 5"/>
-</svg>
-  <svg width="75vw" height="1.5vh" viewBox="0 0 12vw 0">
-
-    <line x1="20vw" x2="100vw" y1="0" y2="0" stroke="#3400C5" stroke-width="0.2vw" stroke-linecap="square" stroke-dasharray="5, 10"/>
-</svg>
-<svg width="75vw" height="2vh" viewBox="0 0 12vw 0">
-    <line x1="75vw" x2="75vw" y1="0" y2="60" stroke="#3400C5" stroke-width="0.05w" stroke-linecap="square" stroke-dasharray="5, 5"/>
-</svg>
+ <img class="dottedLine" src="../assets/Path 1.svg"/>
   <div class="bookBody">
     <div class="bookImage">
       <div class="bookImageMain"></div>
@@ -75,17 +66,8 @@
     <div class="bookDesc2">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one.</div>
     </div>
   </div>
-  <svg width="75.5vw" height="2vh" viewBox="0 0 12vw 0">
-    <line x1="75vw" x2="75vw" y1="0" y2="60" stroke="#3400C5" stroke-width="0.1vw" stroke-linecap="square" stroke-dasharray="5, 5"/>
-  </svg>
-  
-  <svg width="75vw" height="1.5vh" viewBox="0 0 12vw 0">
+   <img class="dottedLine" src="../assets/Path 2.svg"/>
 
-    <line x1="20vw" x2="100vw" y1="0" y2="0" stroke="#3400C5" stroke-width="0.2vw" stroke-linecap="square" stroke-dasharray="5, 10"/>
-</svg>
- <svg width="75vw" height="2vh" viewBox="0 0 12vw 0">
-    <line x1="20vw" x2="20vw" y1="0" y2="60" stroke="#3400C5" stroke-width="0.1vw" stroke-linecap="square" stroke-dasharray="5, 5"/>
-</svg>
   <div class="payBody">
     <div class="payImage">
       <div class="payImageMain"></div>
@@ -180,20 +162,24 @@ html, body {
 {
   margin: 0;
 }
+.dottedLine
+{
+  width:55vw;
+  margin-left:20vw;
+}
 .cardView
 {
   float:left;
-  margin-left:1.667vw;
+  margin-left:0.667vw;
   margin-top: 3.7037vh;
-  background-color:#3400C5;
-  width:2.083vw;
-  height:3.7037vh;
+  width:4.444vw;
+  height:4.7037vh;
 }
 .cardHead
 {
   float:left;
   margin-top:4vh;
-  margin-left:1.250vw;
+  margin-left:0.750vw;
   color:#3400C5;
   font-size:1.458vw;
   font-weight:600
@@ -524,9 +510,13 @@ html, body {
   float:left;
   margin-left:1.667vw;
   margin-top:  2.08333vh;
-  background-color:#3400C5;
   width:2.083vw;
   height: 1.2vh;
+}
+.dottedLine
+{
+  width:50vw;
+  margin-left:20vw;
 }
 .cardHead
 {
@@ -863,9 +853,13 @@ html, body {
   float:left;
   margin-left:1.667vw;
   margin-top: 3.7037vh;
-  background-color:#3400C5;
-  width:2.083vw;
+  width:4.444vw;
   height:3.7037vh;
+}
+.dottedLine
+{
+  width:55vw;
+  margin-left:20vw;
 }
 .cardHead
 {
@@ -1199,9 +1193,13 @@ html, body {
   float:left;
   margin-left:1.667vw;
   margin-top: 3.7037vh;
-  background-color:#3400C5;
-  width:2.083vw;
+  width:4.444vw;
   height:3.7037vh;
+}
+.dottedLine
+{
+  width:55vw;
+  margin-left:20vw;
 }
 .cardHead
 {
@@ -1537,9 +1535,13 @@ html, body {
   float:left;
   margin-left:1.667vw;
   margin-top: 3.7037vh;
-  background-color:#3400C5;
-  width:2.083vw;
+  width:4.444vw;
   height:3.7037vh;
+}
+.dottedLine
+{
+  width:55vw;
+  margin-left:20vw;
 }
 .cardHead
 {
@@ -1875,9 +1877,13 @@ html, body {
   float:left;
   margin-left:1.667vw;
   margin-top: 3.7037vh;
-  background-color:#3400C5;
-  width:2.083vw;
+  width:4.444vw;
   height:3.7037vh;
+}
+.dottedLine
+{
+  width:55vw;
+  margin-left:20vw;
 }
 .cardHead
 {

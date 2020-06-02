@@ -1,0 +1,15 @@
+<svg id="Layer_6" data-name="Layer 6" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="SVGID" width="48" height="48" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_19" data-name="Group 19" clip-path="url(#clip-path)">
+    <path id="Path_13" data-name="Path 13" d="M16.1,8.861a2.26,2.26,0,0,1-1.54,2.38,3.6,3.6,0,0,1-1.02,0H10V6.4h3.62a3.64,3.64,0,0,1,1.02.12,2.22,2.22,0,0,1,1.46,2.34Z" transform="translate(10 6.399)" fill="#efedf9"/>
+    <path id="Path_14" data-name="Path 14" d="M18,2A14,14,0,1,0,32,16,14,14,0,0,0,18,2Zm3,16.5a11.279,11.279,0,0,1-1.32,0H16V24H12.88V8h6.8A11.04,11.04,0,0,1,21,8a4.74,4.74,0,0,1,4.16,5.2A4.76,4.76,0,0,1,21,18.5Z" transform="translate(4 2)" fill="#efedf9"/>
+    <path id="Path_15" data-name="Path 15" d="M19.08,34.34A12.22,12.22,0,1,1,31.36,22.1a1,1,0,1,1-2,0A10.22,10.22,0,1,0,19.08,32.34a1,1,0,0,1,1,1,1.02,1.02,0,0,1-1,1Z" transform="translate(6.92 9.9)" fill="#3400c5"/>
+    <path id="Path_16" data-name="Path 16" d="M15.49,25.74l-.82-2,1.02-.4a10.54,10.54,0,0,0,5.06-4.26l.58-.98,1.88,1.16-.58.94a12.72,12.72,0,0,1-6.12,5.14Z" transform="translate(14.67 18.1)" fill="#00c4c4"/>
+    <path id="Path_17" data-name="Path 17" d="M17.882,14.75H22.1a.98.98,0,0,1,.7,1.68l-2,2a1.04,1.04,0,0,1-1.46,0l-2-2a.98.98,0,0,1,.54-1.68Z" transform="translate(17.038 14.75)" fill="#3400c5"/>
+    <path id="Path_18" data-name="Path 18" d="M16.88,25a.98.98,0,0,1-.7-.3l-3.36-3.36a1,1,0,0,1-.28-.7V13.5a1,1,0,0,1,1-1,1.02,1.02,0,0,1,1,1v6.82l3.06,3.06A.92.92,0,0,1,16.88,25Z" transform="translate(12.54 12.5)" fill="#3400c5"/>
+  </g>
+</svg>

@@ -1,0 +1,13 @@
+<svg id="Layer_6" data-name="Layer 6" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="SVGID" width="48" height="48" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_20" data-name="Group 20" clip-path="url(#clip-path)">
+    <path id="Path_19" data-name="Path 19" d="M16.1,8.861a2.26,2.26,0,0,1-1.54,2.38,3.6,3.6,0,0,1-1.02,0H10V6.4h3.62a3.64,3.64,0,0,1,1.02.12,2.22,2.22,0,0,1,1.46,2.34Z" transform="translate(10 6.399)" fill="#efedf9"/>
+    <path id="Path_20" data-name="Path 20" d="M18,2A14,14,0,1,0,32,16,14,14,0,0,0,18,2Zm3,16.5a11.279,11.279,0,0,1-1.32,0H16V24H12.88V8h6.8A11.04,11.04,0,0,1,21,8a4.74,4.74,0,0,1,4.16,5.2A4.76,4.76,0,0,1,21,18.5Z" transform="translate(4 2)" fill="#efedf9"/>
+    <path id="Path_21" data-name="Path 21" d="M17.5,36.61a.9.9,0,0,1-.4,0,1,1,0,0,1-.58-1.1l1.64-8.82H11.5a1,1,0,0,1-.94-1.34l2.26-6,3.72-10a1,1,0,0,1,.96-.96h7.74a1,1,0,0,1,.94,1.34l-3.22,8.7h6.42a1.04,1.04,0,0,1,.9.54,1.06,1.06,0,0,1-.1,1.06L18.3,36.21A.98.98,0,0,1,17.5,36.61Zm-4.56-12h6.42a1.06,1.06,0,0,1,.78.36,1,1,0,0,1,.2.82l-1.06,5.7L27.5,20.43h-6a1,1,0,0,1-.94-1.34l3.22-8.7h-5.6l-3.44,9.22a.86.86,0,0,1,0,.1Z" transform="translate(10.5 8.39)" fill="#3400c5"/>
+    <path id="Path_22" data-name="Path 22" d="M15.45,17.65H13.31l2.8-7.3h2.16Z" transform="translate(13.31 10.35)" fill="#00c4c4"/>
+  </g>
+</svg>
