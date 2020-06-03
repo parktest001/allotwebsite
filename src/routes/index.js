@@ -8,16 +8,16 @@ Vue.use(Router)
 
 const router = new Router({
     mode: 'history',
-    base: __dirname,
+    base: process.env.BASE_URL,
     routes: [
    
-    // {
-    //     path: '/',
-    //     name: 'home',
-    //     component: Home
-    // },
     {
         path: '/',
+        name: 'home',
+        component: Home
+    },
+    {
+        path: '/reg',
         name: 'register',
         component: Register
     },
