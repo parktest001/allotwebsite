@@ -88,13 +88,11 @@ export default {
         let headers = new Headers();
         let encoded = window.btoa("admin:admin");
         headers.append('Authorization', 'Basic ' + encoded);
-        headers.append("Content-Type", "application/json");
-        headers.append("Accept", "text/plain");
         const requestOptions = {
     method: "POST",
     headers: headers,
     credential:'same-origin',
-    body: JSON.stringify({
+    body: JSON.encode({
     "mobile":"9500164001",
     "passWord":"Test@54321"
     })
