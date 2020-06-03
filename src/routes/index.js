@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from '../components/Home'
+import Register from '../components/RegisterParking'
 
 
 Vue.use(Router)
@@ -11,9 +12,14 @@ const router = new Router({
     routes: [
    
     {
-        path: '/',
+        path: '*',
         name: 'home',
         component: Home
+    },
+    {
+        path: '/Register',
+        name: 'register',
+        component: Register
     },
 ]
 });

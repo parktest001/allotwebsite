@@ -1,5 +1,8 @@
 <template>
+
 <div class = "main">
+      <navbar></navbar>
+
 <div class="mainDiv">
   <div class="subDiv">
   <div class="desc">
@@ -115,11 +118,15 @@
 
 import { mapGetters } from "vuex";
 import firebase from "firebase";
+import navbar from "../components/Navbar";
+
 let vh = window.innerHeight * 0.01;
 // Then we set the value in the --vh custom property to the root of the document
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 export default {
-  
+  components: {
+    navbar
+  },
   computed: {
     ...mapGetters({
 // map `this.user` to `this.$store.getters.user`
