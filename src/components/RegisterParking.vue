@@ -89,7 +89,7 @@ export default {
         let encoded = window.btoa("admin:admin");
         headers.append('Authorization', 'Basic ' + encoded);
         headers.append("Content-Type", "application/json");
-        headers.append("Accept-Type", "application/text");
+        headers.append("Accept", "text/plain");
         const requestOptions = {
     method: "POST",
     headers: headers,
