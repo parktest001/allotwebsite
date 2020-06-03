@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+      
     "lint": "vue-cli-service lint"
   },
   "engines": {
@@ -12,7 +11,6 @@
   },
   "dependencies": {
     "base-64": "^0.1.0",
-    "connect-history-api-fallback": "^1.6.0",
     "element-ui": "^2.4.5",
     "express": "^4.17.1",
     "node-sass": "^4.13.1",
