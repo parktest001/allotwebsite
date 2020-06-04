@@ -88,7 +88,7 @@ export default {
       },
       submit()
       {
-        axios.post("http://147.139.37.111:8080/ChannelCreation/rest/user/logIn", {
+        axios.post("https://allotserver.herokuapp.com/rest/user/logIn", {
             withCredentials: true,
             headers: {
               "Accept": "text/plain",
