@@ -50,6 +50,9 @@
 import { mapGetters } from "vuex";
 import firebase from "firebase";
 import { encode } from "base-64";
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+ 
 let vh = window.innerHeight * 0.01;
 // Then we set the value in the --vh custom property to the root of the document
 document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -85,21 +88,41 @@ export default {
       },
       submit()
       {
-        let headers = new Headers();
-        let encoded = window.btoa("admin:admin");
-        headers.append('Authorization', 'Basic ' + encoded);
-        const requestOptions = {
-    method: "POST",
-    headers: headers,
-    credential:'same-origin',
-    body: JSON.encode({
-    "mobile":"9500164001",
-    "passWord":"Test@54321"
-    })
-  };
-   fetch("http://147.139.37.111:8080/ChannelCreation/rest/user/logIn", requestOptions)
-    .then(response => response.json())
-    .then(data => (this.postId = data.id));
+        axios.post("http://147.139.37.111:8080/ChannelCreation/rest/user/logIn", {
+            withCredentials: true,
+            headers: {
+              "Accept": "text/plain",
+              "Content-Type": "application/json"
+            }
+          },{
+            auth: {
+              username: "admin",
+              password: "admin"
+          }}).then(function(response) {
+            console.log('Authenticated');
+          }).catch(function(error) {
+            console.log('Error on Authentication');
+          });
+
+
+
+
+
+  //       let headers = new Headers();
+  //       let encoded = window.btoa("admin:admin");
+  //       headers.append('Authorization', 'Basic ' + encoded);
+  //       const requestOptions = {
+  //   method: "POST",
+  //   headers: headers,
+  //   credential:'same-origin',
+  //   body: JSON.encode({
+  //   "mobile":"9500164001",
+  //   "passWord":"Test@54321"
+  //   })
+  // };
+  //  fetch("http://147.139.37.111:8080/ChannelCreation/rest/user/logIn", requestOptions)
+  //   .then(response => response.json())
+  //   .then(data => (this.postId = data.id));
       }
     }
 };
