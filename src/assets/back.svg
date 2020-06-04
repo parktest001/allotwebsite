@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="142" height="142" viewBox="0 0 142 142">
+  <g id="Group_410" data-name="Group 410" transform="translate(-756 631)">
+    <g id="Ellipse_23" data-name="Ellipse 23" transform="translate(756 -631)" fill="#3400c5" stroke="#707070" stroke-width="1">
+      <circle cx="71" cy="71" r="71" stroke="none"/>
+      <circle cx="71" cy="71" r="70.5" fill="none"/>
+    </g>
+    <g id="Logo" transform="translate(787 -599.998)">
+      <path id="Path_1" data-name="Path 1" d="M59.02,20.011A40,40,0,0,0,60,100H71.577a3.158,3.158,0,0,0,3.158-3.158h0a3.158,3.158,0,0,0-3.158-3.158H60.507c-18.62,0-34.1-14.894-34.191-33.514A33.719,33.719,0,0,1,60.167,26.316c18.62.092,33.514,15.571,33.514,34.191v11.07a3.158,3.158,0,0,0,3.158,3.158h0A3.158,3.158,0,0,0,100,71.577V60A40,40,0,0,0,59.02,20.011Z" transform="translate(-20 -20)" fill="#fff"/>
+      <path id="Path_2" data-name="Path 2" d="M4.444,0H15.555A4.444,4.444,0,0,1,20,4.444V15.555A4.444,4.444,0,0,1,15.555,20H4.444A4.444,4.444,0,0,1,0,15.555V4.444A4.444,4.444,0,0,1,4.444,0Z" transform="translate(59.998 59.998)" fill="#fff"/>
+      <circle id="Ellipse_1" data-name="Ellipse 1" cx="20.555" cy="20.555" r="20.555" transform="translate(19.304 19.304)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
