@@ -88,17 +88,22 @@ export default {
       },
       submit()
       {
-        axios.post("https://allotserver.herokuapp.com/rest/user/logIn", {
-            withCredentials: true,
-            headers: {
-              "Accept": "text/plain",
-              "Content-Type": "application/json"
-            }
+        axios.post("https://allotserver.herokuapp.com/rest/ParkingService/setSpaceSignup", {
+    "parkingLotName":this.form.name,
+    "displayName":this.form.name,
+    "address":this.form.address,
+    "lattitude":this.form.lat,
+    "longitude":this.form.lon,
+    "carCapacity":this.form.carcap,
+    "carPrice":this.form.carprice,
+    "bikeCapacity":this.form.bikecap,
+    "bikePrice":this.form.bikeprice,
+    "features":this.form.features,
+    "userName":this.form.user,
+    "passWord":this.form.pass
+
           },{
-            auth: {
-              username: "admin",
-              password: "admin"
-          }}).then(function(response) {
+           }).then(function(response) {
             console.log('Authenticated');
           }).catch(function(error) {
             console.log('Error on Authentication');
