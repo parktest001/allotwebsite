@@ -25,8 +25,11 @@ const configOptions = {
 
 firebase.initializeApp(configOptions);
 
-firebase.auth().onAuthStateChanged(user => {
-  store.dispatch("fetchUser", user);
+
+firebase.database().ref('scenaries-7c397').set({
+  username: "name",
+  email: "email",
+  profile_picture : "imageUrl"
 });
 new Vue({
   router,

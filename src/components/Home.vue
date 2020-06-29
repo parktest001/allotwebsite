@@ -506,6 +506,7 @@ html, body {
 }
 .footerSocial
 {
+  margin-top: 200px;
   font-size: 2vw;
   color:#ffffff;
 }
@@ -840,6 +841,7 @@ html, body {
 }
 .footerSocial
 {
+    margin-top: 200px;
   color:#ffffff;
   font-size:2.5vw;
 }
@@ -1186,6 +1188,7 @@ html, body {
 }
 .footerSocial
 {
+    margin-top: 200px;
   font-size: 2vw;
   color:#ffffff;
 }
@@ -1526,6 +1529,7 @@ html, body {
 }
 .footerSocial
 {
+    margin-top: 200px;
   font-size: 2vw;
   color:#ffffff;
 }
@@ -1868,6 +1872,7 @@ html, body {
 }
 .footerSocial
 {
+    margin-top: 200px;
   font-size: 2vw;
   color:#ffffff;
 }
@@ -2210,6 +2215,7 @@ html, body {
 }
 .footerSocial
 {
+    margin-top: 200px;
   font-size: 2vw;
   color:#ffffff;
 }
