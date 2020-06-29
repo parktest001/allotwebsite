@@ -1,13 +1,13 @@
-var history = require('connect-history-api-fallback');
-var express = require('express');
-var path = require('path');
-var serveStatic = require('serve-static');
-app = express();
-app.use(history());    
-app.use(serveStatic(__dirname + "/dist"));
-var port = process.env.PORT || 5000;
-app.listen(port);
-console.log('server started '+ port);
+// var history = require('connect-history-api-fallback');
+// var express = require('express');
+// var path = require('path');
+// var serveStatic = require('serve-static');
+// app = express();
+// app.use(history());    
+// app.use(serveStatic(__dirname + "/dist"));
+// var port = process.env.PORT || 5000;
+// app.listen(port);
+// console.log('server started '+ port);
 
 // // var history = require('connect-history-api-fallback');
 // // var connect = require('connect');
@@ -51,19 +51,25 @@ console.log('server started '+ port);
 
 
 
-
-var nodeStatic = require('node-static');
-var https = require('https');
-var file = new (nodeStatic.Server)();
 const fs = require('fs');
+const https = require('https');
+const express = require('express');
+var serveStatic = require('serve-static');
+const app = express();
+app.use(serveStatic(__dirname + '/dist'));
+app.get('/', function(req, res) {
+    return res.end('<p>This server serves up static files.</p>');
+  });
+
 const options = {
     key: fs.readFileSync('/etc/letsencrypt/live/allotpark.buzz/privkey.pem'),
-    cert: fs.readFileSync('/etc/letsencrypt/live/allotpark.buzz/cert.pem')
+    cert: fs.readFileSync('/etc/letsencrypt/live/allotpark.buzz/cert.pem'),
+    passphrase: process.env.HTTPS_PASSPHRASE || ''
 };
+const server = https.createServer(options, app);
 
-var app  = https.createServer(options, function (req, res) {
-    file.serve(req, res);
-}).listen(80);
+server.listen(5000);
+console.log('server started '+ 5000);
 
 
 // var serveStatic = require('serve-static');
