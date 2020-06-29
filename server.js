@@ -52,15 +52,14 @@
 
 
 
-const https = require('https');
+var nodeStatic = require('node-static');
+var https = require('https');
+var file = new (nodeStatic.Server)();
 const fs = require('fs');
-
 const options = {
-  key: fs.readFileSync('./ssl/account.key'),
-  cert: fs.readFileSync('./ssl/domain.key')
+    key: fs.readFileSync('/etc/letsencrypt/live/domain/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/domain/cert.pem')
 };
-
-https.createServer(options, function (req, res) {
-  res.writeHead(200);
-  res.end("hello world\n");
+var app  = https.createServer(options, function (req, res) {
+    file.serve(req, res);
 }).listen(5000);
