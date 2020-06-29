@@ -68,8 +68,8 @@ const options = {
 };
 const server = https.createServer(options, app);
 
-server.listen(80);
-console.log('server started '+ 80);
+server.listen(443);
+console.log('server started '+ 443);
 
 
 // var serveStatic = require('serve-static');
