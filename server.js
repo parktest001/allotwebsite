@@ -1,13 +1,13 @@
-var history = require('connect-history-api-fallback');
-var express = require('express');
-var path = require('path');
-var serveStatic = require('serve-static');
-app = express();
-app.use(history());    
-app.use(serveStatic(__dirname + "/dist"));
-var port = process.env.PORT || 5000;
-app.listen(port);
-console.log('server started '+ port);
+// var history = require('connect-history-api-fallback');
+// var express = require('express');
+// var path = require('path');
+// var serveStatic = require('serve-static');
+// app = express();
+// app.use(history());    
+// app.use(serveStatic(__dirname + "/dist"));
+// var port = process.env.PORT || 5000;
+// app.listen(port);
+// console.log('server started '+ port);
 
 // // var history = require('connect-history-api-fallback');
 // // var connect = require('connect');
@@ -34,3 +34,33 @@ console.log('server started '+ port);
 //       }
 //     })
 //   })
+
+// var https = require('https');
+// var fs = require('fs');
+// var https_options = {
+// key: fs.readFileSync("./ssl/private.key"),
+// cert: fs.readFileSync("./ssl/certificate.crt"),
+// ca: [
+// fs.readFileSync('./ssl/ca_bundle.crt')
+// ]
+// };
+// https.createServer(https_options, function (req, res) {
+//     res.writeHead(200);
+//     res.end("Welcome to Node.js HTTPS Servern");
+//     }).listen(5000)
+
+
+
+
+const https = require('https');
+const fs = require('fs');
+
+const options = {
+  key: fs.readFileSync('./ssl/private.key'),
+  cert: fs.readFileSync('./ssl/certificate.crt')
+};
+
+https.createServer(options, function (req, res) {
+  res.writeHead(200);
+  res.end("hello world\n");
+}).listen(5000);
