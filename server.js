@@ -66,8 +66,11 @@ const options = {
     cert: fs.readFileSync('/etc/letsencrypt/live/allotpark.buzz/cert.pem'),
     passphrase: process.env.HTTPS_PASSPHRASE || ''
 };
-const server = https.createServer(options, app);
 
+var httpServer = http.createServer(app);
+
+const server = https.createServer(options, app);
+httpServer.listen(80);
 server.listen(443);
 console.log('server started '+ 443);
 
