@@ -52,6 +52,7 @@
 
 
 const fs = require('fs');
+const http = require('http');
 const https = require('https');
 const express = require('express');
 var serveStatic = require('serve-static');
@@ -68,8 +69,8 @@ const options = {
 };
 
 var httpServer = http.createServer(app);
-
 const server = https.createServer(options, app);
+
 httpServer.listen(80);
 server.listen(443);
 console.log('server started '+ 443);
