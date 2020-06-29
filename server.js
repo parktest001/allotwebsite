@@ -57,8 +57,8 @@ var https = require('https');
 var file = new (nodeStatic.Server)();
 const fs = require('fs');
 const options = {
-    key: fs.readFileSync('/etc/letsencrypt/live/domain/privkey.pem'),
-    cert: fs.readFileSync('/etc/letsencrypt/live/domain/cert.pem')
+    key: fs.readFileSync('/etc/letsencrypt/live/allotpark.buzz/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/allotpark.buzz/cert.pem')
 };
 var app  = https.createServer(options, function (req, res) {
     file.serve(req, res);
