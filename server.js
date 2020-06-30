@@ -50,7 +50,7 @@
 //     }).listen(5000)
 
 
-
+process.env.NODE_ENV = 'production';
 var history = require('connect-history-api-fallback');
 const express = require('express');
 var serveStatic = require('serve-static');
@@ -64,7 +64,6 @@ http.globalAgent.maxSockets = Infinity;
 https.globalAgent.maxSockets = Infinity;
 
 app.get('/', function(req, res) {
-  res.setHeader('Cache-Control', 'public, max-age=86400');
 	res.render('index.html');
   res.end('<p>This server serves up static files.</p>');
   });
@@ -83,10 +82,7 @@ server.listen(443);
 console.log('server started '+ 443);
 
 
-// var serveStatic = require('serve-static');
-// app = express();
-// app.use(history());    
-// app.use(serveStatic(__dirname + "/dist"));
-// var port = process.env.PORT || 5000;
-// app.listen(port);
-// console.log('server started '+ port);
+
+
+
+
