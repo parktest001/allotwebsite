@@ -54,12 +54,16 @@
 const fs = require('fs');
 const http = require('http');
 const https = require('https');
+http.globalAgent.maxSockets = Infinity;
+https.globalAgent.maxSockets = Infinity;
 const express = require('express');
 var serveStatic = require('serve-static');
 const app = express();
 app.use(serveStatic(__dirname + '/dist'));
 app.get('/', function(req, res) {
-    return res.end('<p>This server serves up static files.</p>');
+  res.setHeader('Cache-Control', 'public, max-age=86400');
+	res.render('index.html');
+  res.end('<p>This server serves up static files.</p>');
   });
 
 const options = {
