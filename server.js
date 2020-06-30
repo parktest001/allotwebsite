@@ -52,16 +52,17 @@
 
 
 var history = require('connect-history-api-fallback');
+const express = require('express');
+var serveStatic = require('serve-static');
+const app = express();
+app.use(express.static(__dirname + '/dist'));
+app.use(history());    
 const fs = require('fs');
 const http = require('http');
 const https = require('https');
 http.globalAgent.maxSockets = Infinity;
 https.globalAgent.maxSockets = Infinity;
-const express = require('express');
-var serveStatic = require('serve-static');
-const app = express();
-app.use(history());    
-app.use(serveStatic(__dirname + '/dist'));
+
 app.get('/', function(req, res) {
   res.setHeader('Cache-Control', 'public, max-age=86400');
 	res.render('index.html');
