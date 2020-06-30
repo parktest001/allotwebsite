@@ -51,6 +51,7 @@
 
 
 
+var history = require('connect-history-api-fallback');
 const fs = require('fs');
 const http = require('http');
 const https = require('https');
@@ -59,6 +60,7 @@ https.globalAgent.maxSockets = Infinity;
 const express = require('express');
 var serveStatic = require('serve-static');
 const app = express();
+app.use(history());    
 app.use(serveStatic(__dirname + '/dist'));
 app.get('/', function(req, res) {
   res.setHeader('Cache-Control', 'public, max-age=86400');
