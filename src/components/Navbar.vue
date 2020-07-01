@@ -1,6 +1,35 @@
 <template>
   <div style="margin-top:8vh; margin-right: 1vw;" class="mainNav">
-    <el-button class="menuButton">JOIN AS VENDOR</el-button>
+   
+    <!-- <el-popover
+  placement="right"
+  width="400"
+  trigger="click">
+  
+  <el-form ref="ruleForm" model="ruleForm" rules="rules" label-width="120px">
+  
+  <el-form-item label="Owner Name">
+    <el-input v-model="ruleForm.name" ></el-input>
+  </el-form-item>
+  
+  <el-form-item label="Phone Number">
+    <el-input v-model="ruleForm.number"></el-input>
+  </el-form-item>
+  <el-form-item label="Parking Lot Name">
+    <el-input v-model="ruleForm.lotname"></el-input>
+  </el-form-item>
+  <el-form-item label="Address">
+    <el-input v-model="ruleForm.address"></el-input>
+  </el-form-item>
+  <el-form-item>
+    <el-button type="primary" @click="submitForm()">Join</el-button>
+    <el-button>Cancel</el-button>
+  </el-form-item>
+
+  </el-form>
+  
+</el-popover> -->
+<el-button class="menuButton" @click="pushPage" style="background-color:#3400c5;color:#ffffff">JOIN AS VENDOR</el-button>
    <img class="imageDiv" src="../assets/Logo.svg"/>
 
       <el-menu
@@ -12,7 +41,6 @@
   text-color="#3400C5"
   active-text-color="#3400C5"
 
-  
   >
   <el-menu-item index="1" class="menuItem">FEATURES</el-menu-item>
  
@@ -20,40 +48,66 @@
 </el-menu></div>
 </template>
 <script>
-import { mapGetters } from "vuex";
-import firebase from "firebase";
+//import { mapGetters } from "vuex"; 
+import Vue from 'vue'
+import Vuelidate from 'vuelidate'
+import firebase from "firebase/app";
+
+
+Vue.use(Vuelidate)
 export default {
-  computed: {
-    ...mapGetters({
-// map `this.user` to `this.$store.getters.user`
-      user: "user"
-    })
-  },
-  methods: {
-    signOut() {
-      window.app=this
-      firebase
-        .auth()
-        .signOut()
-        .then(() => {
-          this.$router.replace({
-            name: "login"
-          });
-          window.app.$message('Logged out successfully');
-        });
+ data() {
+   /*var checkName = (rule, value, callback) => {
+     if(!value){
+       return callback(new Error('Please input the age'));
+     }
+   }*/
+      return {
+        ruleForm: {
+          name: '',
+          number: '',
+          lotname: '',
+          address: ''
+          
+        
     },
-    goBack() {
-      window.history.back();
+    validations: {
+          name: [
+            { required: true, message: 'Please input Activity name', trigger: 'blur' },
+            { min: 3, max: 5, message: 'Length should be 3 to 5', trigger: 'blur' }
+          ]
+    }
+};
+},
+    // mounted: {
+    //     db.collection("employees")
+    //       .add({ date: date, name: name })
+    //       .then(() => {
+    //         console.log("Document successfully written!");
+    //       })
+    //       .catch((error) => {
+    //         console.error("Error writing document: ", error);
+    //       });
+    // },
+    methods: {
+      
+      submitForm() {
+        console.log("CALLED HERE")
+        firebase.database().ref(this.ruleForm.number).set(
+        {
+          name: this.ruleForm.name,
+          number: this.ruleForm.number,
+          lotname: this.ruleForm.lotname,
+          address: this.ruleForm.address
+        }
+        );
+    
     },
-    handleAbout()
+    pushPage()
     {
-          this.$message('Development Stage');
-    },
-    loginpage()
-    {
-        this.$router.push('/login')
-    },
-  }
+      this.$router.push('/vendor');
+    }
+    }
 };
 </script>
 <style>

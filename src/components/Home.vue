@@ -19,6 +19,7 @@
   </div>
   </div>
   <div class="imgRight">
+    <img class="imgRight" src="../assets/Feature.svg" />
   </div>
 </div>
 <div class="featureHeading">
@@ -48,8 +49,10 @@
 
 </div>
   <div class="featureBody">
-    <div class="featureImage">
-      <div class="featureImageMain"></div>
+    <div class="featureImage border">
+      <div class="featureImageMain ">
+        <lottie :options="defaultOptions" :height="400" :width="400" v-on:animCreated="handleAnimation"/>
+      </div>
     </div>
     <div style="float:left;margin-left: 3.3333vw;">
     <div class="featureDesc1" style="font-weight:600">Search for parking spaces</div>
@@ -61,8 +64,11 @@
   </div>
  <img class="dottedLine" src="../assets/Path 1.svg"/>
   <div class="bookBody">
-    <div class="bookImage">
-      <div class="bookImageMain"></div>
+    <div class="bookImage border">
+      <div class="bookImageMain ">
+        <lottie :options="defaultOptions1" :height="400" :width="400" />
+       
+      </div>
     </div>
     <div style="float:left;margin-left: 3.3333vw;">
     <div class="bookDesc1" style="font-weight:600">Book a slot</div>
@@ -71,9 +77,11 @@
   </div>
    <img class="dottedLine" src="../assets/Path 2.svg"/>
 
-  <div class="payBody">
-    <div class="payImage">
-      <div class="payImageMain"></div>
+  <div class="payBody ">
+    <div class="payImage border">
+      <div class="payImageMain ">
+        <lottie :options="defaultOptions2" :height="400" :width="400" v-on:animCreated="handleAnimation"/>
+      </div>
     </div>
     <div style="float:left;margin-left: 3.3333vw;">
     <div class="payDesc1" style="font-weight:600">Park and Pay</div>
@@ -81,11 +89,13 @@
     </div>
   </div>
   <div class="joinBody">
-      <div class="joinImageMain"></div>
+      <div class="joinImageMain ">
+        <lottie :options="defaultOptions4" :height="400" :width="400" v-on:animCreated="handleAnimation"/>
+      </div>
     <div style="float:left;">
     <div class="joinDesc1" style="font-weight:600">Do you have a space <br>that can be used as a parking?</div>
     <div class="joinDesc2">You can partner with use as a vendor and earn money with ease.</div>
-    <el-button class="menuButtonNew" style="background-color:#3400c5;color:#ffffff">JOIN AS VENDOR</el-button>
+    <el-button class="menuButtonNew" style="background-color:#3400c5;color:#ffffff" @click="pushPage">JOIN AS VENDOR</el-button>
     </div>
   </div>
 <center>
@@ -117,15 +127,37 @@
 <script>
 
 import { mapGetters } from "vuex";
-import firebase from "firebase";
+
 import navbar from "../components/Navbar";
+
+import Lottie from "vue-lottie";
+
+import animationData1 from "../assets/Book_Final.json";
+import animationData from "../assets/Search_Final.json";
+import animationData2 from "../assets/Pay_Final.json";
+import animationData3 from "../assets/Park_Final.json";
+import animationData4 from "../assets/map_search.json";
+
+
 
 let vh = window.innerHeight * 0.01;
 // Then we set the value in the --vh custom property to the root of the document
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 export default {
+  name:'bookImageMain',
   components: {
-    navbar
+    navbar,
+    'lottie': Lottie
+
+  },
+  data(){
+    return{
+      defaultOptions1: {animationData: animationData1},
+      defaultOptions: {animationData: animationData},
+      defaultOptions2: {animationData: animationData2},
+      defaultOptions3: {animationData: animationData3},
+      defaultOptions4: {animationData: animationData4}
+    }
   },
   computed: {
     ...mapGetters({
@@ -133,8 +165,12 @@ export default {
       user: "user"
     })
   },
+
   methods: {
-   
+   pushPage()
+    {
+      this.$router.push('/vendor');
+    }
   }
 };
 
@@ -151,7 +187,12 @@ html, body {
   font-family: 'Open Sans', Open+Sans;
 }
 
-
+.border
+{
+  border: 0.5px;
+  border-color:#3400c5;
+  border-style: solid;
+}
 
 
 /* 
@@ -223,7 +264,7 @@ html, body {
 .imgRight
 {
   float: right;
-  background-color: #d9d9d9;
+  
   width: 40.938vw;
   height: 78.5185vh;
 }
@@ -294,21 +335,25 @@ html, body {
   float: left;
   height: 48.1481vh;
   width: 27.083vw;
-  background-color: #F5F4F8;
+  
+  /* background-color: #F5F4F8; */
 
 }
 .featureImageMain
 {
-  margin-top: 6.6666vh;
-  height: 34.8148vh;
-  width: 19.583vw;
-  margin-left: 3.750vw;
-  background-color: #F5F4F8;
+  float: left;
+  /* margin-top: 9.6666vh; */
+  height: 48.8148vh;
+  width: 10.583vw;
+  align-content: center;
+  /* margin-bottom: 10.6666vh; */
+  /* margin-left: 2.750vw; */
+  /* background-color: #F5F4F8; */
 }
 .featureDesc1
 {
     font-family: 'Manrope', Manrope;
-    margin-top: 10.3703vh;
+    margin-top: 12.3703vh;
     margin-left: 3.3333vw;
     height: 5.0925vh;
     width: 25.729vw;
@@ -337,21 +382,21 @@ html, body {
   float: right;
   height: 48.1481vh;
   width: 27.083vw;
-  background-color: #F5F4F8;
+  /* background-color: #F5F4F8; */
 
 }
 .bookImageMain
 {
-  margin-top: 6.6666vh;
+  /* margin-top: 6.6666vh; */
   height: 34.8148vh;
   width: 19.583vw;
-  margin-left: 3.750vw;
-  background-color: #F5F4F8;
+  /* margin-left: 3.750vw;
+  background-color: #F5F4F8; */
 }
 .bookDesc1
 {
     font-family: 'Manrope', Manrope;
-    margin-top: 10.3703vh;
+    margin-top: 15.3703vh;
     margin-right: 3.3333vw;
     height: 5.0925vh;
     width: 25.729vw;
@@ -380,16 +425,16 @@ html, body {
   float: left;
   height: 48.1481vh;
   width: 27.083vw;
-  background-color: #F5F4F8;
+  /* background-color: #F5F4F8; */
 
 }
 .payImageMain
 {
-  margin-top: 6.6666vh;
+  /* margin-top: 6.6666vh; */
   height: 34.8148vh;
   width: 19.583vw;
-  margin-left: 3.750vw;
-  background-color: #F5F4F8;
+  /* margin-left: 3.750vw;
+  background-color: #F5F4F8; */
 }
 .payDesc1
 {
@@ -506,7 +551,6 @@ html, body {
 }
 .footerSocial
 {
-  margin-top: 200px;
   font-size: 2vw;
   color:#ffffff;
 }
@@ -841,7 +885,6 @@ html, body {
 }
 .footerSocial
 {
-    margin-top: 200px;
   color:#ffffff;
   font-size:2.5vw;
 }
@@ -1188,7 +1231,6 @@ html, body {
 }
 .footerSocial
 {
-    margin-top: 200px;
   font-size: 2vw;
   color:#ffffff;
 }
@@ -1529,7 +1571,6 @@ html, body {
 }
 .footerSocial
 {
-    margin-top: 200px;
   font-size: 2vw;
   color:#ffffff;
 }
@@ -1872,7 +1913,6 @@ html, body {
 }
 .footerSocial
 {
-    margin-top: 200px;
   font-size: 2vw;
   color:#ffffff;
 }
@@ -2215,7 +2255,6 @@ html, body {
 }
 .footerSocial
 {
-    margin-top: 200px;
   font-size: 2vw;
   color:#ffffff;
 }

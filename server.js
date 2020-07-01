@@ -69,8 +69,8 @@ app.get('/', function(req, res) {
   });
 
 const options = {
-    key: fs.readFileSync('/etc/letsencrypt/live/allotpark.buzz/privkey.pem'),
-    cert: fs.readFileSync('/etc/letsencrypt/live/allotpark.buzz/cert.pem'),
+    // key: fs.readFileSync('/etc/letsencrypt/live/allotpark.buzz/privkey.pem'),
+    // cert: fs.readFileSync('/etc/letsencrypt/live/allotpark.buzz/cert.pem'),
     passphrase: process.env.HTTPS_PASSPHRASE || ''
 };
 

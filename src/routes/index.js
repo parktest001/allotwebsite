@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from '../components/Home'
+import Vendor from '../components/VendorJoin'
 import Register from '../components/RegisterParking'
 
 
@@ -17,9 +18,9 @@ const router = new Router({
         component: Home
     },
     {
-        path: '/reg',
-        name: 'register',
-        component: Register
+        path: '/vendor',
+        name: 'vendor',
+        component: Vendor
     },
 ]
 });

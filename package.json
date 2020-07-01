@@ -22,7 +22,9 @@
     "reset-css": "^4.0.1",
     "sass-loader": "^7.1.0",
     "vue": "^2.5.16",
-    "vue-axios": "^2.1.5"
+    "vue-axios": "^2.1.5",
+    "vue-lottie": "^0.2.1",
+    "vuelidate": "^0.7.5"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-rc.10",
