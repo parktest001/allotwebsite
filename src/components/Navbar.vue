@@ -42,7 +42,7 @@
   active-text-color="#3400C5"
 
   >
-  <el-menu-item index="1" class="menuItem">FEATURES</el-menu-item>
+  <el-menu-item index="1" class="menuItem" @click="nav">FEATURES</el-menu-item>
  
   <el-menu-item index="2" class="menuItem">DOWNLOAD</el-menu-item>
 </el-menu></div>
@@ -106,6 +106,10 @@ export default {
     pushPage()
     {
       this.$router.push('/vendor');
+    },
+    nav()
+    {
+      location.href = "#section1";
     }
     }
 };
