@@ -126,6 +126,17 @@ export default {
       
     
     
+    },
+    mounted (){
+      (function(d, m){
+        var kommunicateSettings = {"appId":"YOUR_APP_ID","popupWidget":true,"automaticChatOpenOnNavigation":true};
+        var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+        s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+        var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+        window.kommunicate = m; m._globals = kommunicateSettings;
+      })(document, window.kommunicate || {});
+    },
+    data: function(){
     }
 };
 </script>
@@ -266,8 +277,8 @@ export default {
     .buttondiv1
     {
       margin-top: 5vh;
-      margin-left: -7.5vw; 
-      margin-right: 1vw;
+      margin-left: -7vw; 
+      margin-right: 0.5vw;
       background-color:#3400c5 ;
       float: left;
       width: 10.5vw;
@@ -357,11 +368,11 @@ export default {
     .buttondiv1
     {
       margin-top: 1vh;
-      margin-left: -22vw; 
-      margin-right: 4vw;
+      margin-left: -23vw; 
+      margin-right: 2vw;
       background-color:#3400c5 ;
       float: left;
-      width: 30vw;
+      width: 28.5vw;
       font-weight:600 ;
     }
     .buttondiv2
@@ -370,16 +381,16 @@ export default {
       margin-left: -40vw; 
       margin-right: 0vw;
       float: left;
-      width: 30vw;
+      width: 28.5vw;
       background-color:#dfd6f7 ;
       color: black;
         font-weight:600 ;
     }
     .formdiv{
-      width: 72vw; 
+      width: 65vw; 
     }
     .hovercard{
-      width: 80vw;
+      width: 73vw;
     } 
     .joinBody1
     {
@@ -393,16 +404,287 @@ export default {
     {
         color:#3400c5;
         font-family: 'Manrope', Manrope;
-        margin-top: 20vh;
+        margin-top: 15vh;
         height: 13vh;
         width: 30vw;
         font-size: 2.917vw;
     }
     .joinDesc21
     {
-        margin-top: -4vh;
+        margin-top: -3vh;
         height: 7.59vh;
         width: 30vw;
+        font-size: 1.563vw;
+        color:#000000
+    }
+}
+/*Rest Of Devices*/
+@media (min-width: 1025px) and (max-width: 1280px){
+  .maindiv{
+      z-index: 0;
+      background-color:#ececec;
+      background-image: url("../assets/map2.svg");
+      width: 100vw;
+      height: 100vh;
+      display:flex; 
+      justify-content: center;
+      align-items: center;
+    } 
+    .centerdiv{
+      clear: left;
+      z-index: 1;
+      display:inline-block;
+      position: relative;
+    margin-left: 7vw;
+      
+
+    }
+    .el-icon-user-solid{
+      size: 100px;
+    }
+    .usericon{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .para{
+      font-family:sans-serif;
+      font-weight: 600;
+      font-size: larger;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #3400c5;
+    }
+    .buttondiv1
+    {
+      margin-top: 5vh;
+      margin-left: -7vw; 
+      margin-right: 0.5vw;
+      background-color:#3400c5 ;
+      float: left;
+      width: 10.5vw;
+      font-weight:600 ;
+    }
+    .buttondiv2
+    {
+      margin-top: 5vh;
+      margin-left: -3vw; 
+      margin-right: 1vw;
+      float: left;
+      width: 10.5vw;
+      background-color:#dfd6f7 ;
+      color: black;
+        font-weight:600 ;
+    }
+    .formdiv{
+      width: 27vw;
+    }
+    .hovercard{
+      width: 30vw;
+    } 
+    .joinBody1
+    {
+      margin-left: -4vw;
+      height: 56.2962vh;
+      display:inline-block;
+      font-size: 4.167vw;
+      color: #707070;
+    }
+    .joinDesc11
+    {
+        color:#3400c5;
+        font-family: 'Manrope', Manrope;
+        margin-top: 10vh;
+        height: 14.4444vh;
+        width: 42.5vw;
+        font-size: 2.917vw;
+    }
+    .joinDesc21
+    {
+        margin-top: 5vh;
+        height: 7.59vh;
+        width: 38.750vw;
+        font-size: 1.563vw;
+        color:#000000
+    }
+}
+@media (min-width: 768px) and (max-width: 1024px){
+  .maindiv{
+      z-index: 0;
+      background-color:#ececec;
+      background-image: url("../assets/map2.svg");
+      width: 100vw;
+      height: 100vh;
+      display:flex; 
+      justify-content: center;
+      align-items: center;
+    } 
+    .centerdiv{
+      clear: left;
+      z-index: 1;
+      display:inline-block;
+      position: relative;
+    margin-left: 3vw;
+      
+
+    }
+    .el-icon-user-solid{
+      size: 100px;
+    }
+    .usericon{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .para{
+      font-family:sans-serif;
+      font-weight: 600;
+      font-size: larger;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #3400c5;
+    }
+    .buttondiv1
+    {
+      margin-top: 5vh;
+      margin-left: -10.5vw; 
+      margin-right: 0.5vw;
+      background-color:#3400c5 ;
+      float: left;
+      width: 13.5vw;
+      font-weight:600 ;
+    }
+    .buttondiv2
+    {
+      margin-top: 5vh;
+      margin-left: -3vw; 
+      margin-right: 1vw;
+      float: left;
+      width: 13.5vw;
+      background-color:#dfd6f7 ;
+      color: black;
+        font-weight:600 ;
+    }
+    .formdiv{
+      width: 32vw;
+    }
+    .hovercard{
+      width: 35vw;
+    } 
+    .joinBody1
+    {
+      margin-left: -2vw;
+      height: 56.2962vh;
+      display:inline-block;
+      font-size: 4.167vw;
+      color: #707070;
+    }
+    .joinDesc11
+    {
+        color:#3400c5;
+        font-family: 'Manrope', Manrope;
+        margin-top: 10vh;
+        height: 14.4444vh;
+        width: 42.5vw;
+        font-size: 2.917vw;
+    }
+    .joinDesc21
+    {
+        margin-top: -2vh;
+        height: 6vh;
+        width: 38.750vw;
+        font-size: 1.563vw;
+        color:#000000
+    }
+}
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape){
+  .maindiv{
+      z-index: 0;
+      background-color:#ececec;
+      background-image: url("../assets/map2.svg");
+      width: 100vw;
+      height: 100vh;
+      display:flex; 
+      justify-content: center;
+      align-items: center;
+    } 
+    .centerdiv{
+      clear: left;
+      z-index: 1;
+      display:inline-block;
+      position: relative;
+    margin-left: 3vw;
+      
+
+    }
+    .el-icon-user-solid{
+      size: 100px;
+    }
+    .usericon{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .para{
+      font-family:sans-serif;
+      font-weight: 600;
+      font-size: larger;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #3400c5;
+    }
+    .buttondiv1
+    {
+      margin-top: 5vh;
+      margin-left: -10.5vw; 
+      margin-right: 0.5vw;
+      background-color:#3400c5 ;
+      float: left;
+      width: 13.5vw;
+      font-weight:600 ;
+    }
+    .buttondiv2
+    {
+      margin-top: 5vh;
+      margin-left: -3vw; 
+      margin-right: 1vw;
+      float: left;
+      width: 13.5vw;
+      background-color:#dfd6f7 ;
+      color: black;
+        font-weight:600 ;
+    }
+    .formdiv{
+      width: 32vw;
+    }
+    .hovercard{
+      width: 35vw;
+    } 
+    .joinBody1
+    {
+      margin-left: -2vw;
+      height: 56.2962vh;
+      display:inline-block;
+      font-size: 4.167vw;
+      color: #707070;
+    }
+    .joinDesc11
+    {
+        color:#3400c5;
+        font-family: 'Manrope', Manrope;
+        margin-top: 10vh;
+        height: 14.4444vh;
+        width: 42.5vw;
+        font-size: 2.917vw;
+    }
+    .joinDesc21
+    {
+        margin-top: -2vh;
+        height: 6vh;
+        width: 38.750vw;
         font-size: 1.563vw;
         color:#000000
     }

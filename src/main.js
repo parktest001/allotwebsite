@@ -9,6 +9,7 @@ import locale from 'element-ui/lib/locale/lang/en'
 
 Vue.use(ElementUI, {locale});
 import App from './App.vue'
+import axios from 'axios'
 
 Vue.config.productionTip = false
 
@@ -36,3 +37,5 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app')
+
+Vue.prototype.$axios = axios

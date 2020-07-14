@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Home from '../components/Home'
 import Vendor from '../components/VendorJoin'
 import Register from '../components/RegisterParking'
+import Chatbox from '../components/ChatBox'
 
 
 Vue.use(Router)
@@ -21,6 +22,11 @@ const router = new Router({
         path: '/vendor',
         name: 'vendor',
         component: Vendor
+    },
+    {
+        path: '/chatbox',
+        name: 'chatbox',
+        component: Chatbox
     },
 ]
 });
