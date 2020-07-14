@@ -1,7 +1,12 @@
 <template>
 
 <div class = "main">
-      <navbar></navbar>
+    <navbar></navbar>
+    <div v-if="isOpenChat" class="chat-box-home">
+      <div class="close-chat" @click="chatBotState()"><img src="https://img.icons8.com/ios-filled/50/000000/x.png" class="close-chat-img"/></div>
+      <ChatBox msg="Welcome to Your Vue.js App"/>
+    </div>
+    <div v-else class="chatbot-closed-popup"><div class="chatbot-closed-popup-message">Hey may i help u</div><img @click="chatBotState()" class="chatbot-closed-popup-image" src="../assets/chatbot-popup.png"/></div>
 
 <div class="mainDiv">
   <div class="subDiv">
@@ -137,6 +142,7 @@ import animationData from "../assets/Search_Final.json";
 import animationData2 from "../assets/Pay_Final.json";
 import animationData3 from "../assets/Park_Final.json";
 import animationData4 from "../assets/map_search.json";
+import ChatBox from '../components/ChatBox.vue'
 
 
 
@@ -147,7 +153,8 @@ export default {
   name:'bookImageMain',
   components: {
     navbar,
-    'lottie': Lottie
+    'lottie': Lottie,
+    ChatBox
 
   },
   data(){
@@ -156,7 +163,8 @@ export default {
       defaultOptions: {animationData: animationData},
       defaultOptions2: {animationData: animationData2},
       defaultOptions3: {animationData: animationData3},
-      defaultOptions4: {animationData: animationData4}
+      defaultOptions4: {animationData: animationData4},
+      isOpenChat : false,
     }
   },
   computed: {
@@ -170,6 +178,10 @@ export default {
    pushPage()
     {
       this.$router.push('/vendor');
+    },
+    chatBotState()
+    {
+      this.isOpenChat = !this.isOpenChat
     }
   }
 };
@@ -178,6 +190,49 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import url('https://fonts.googleapis.com/css?family=Manrope');
+.chatbot-closed-popup
+{
+  position: fixed;
+  bottom : 20px;
+  right : 20px;
+}
+.chatbot-closed-popup-image
+{
+  width : 80px;
+  height: 80px;
+  cursor: pointer;
+}
+.chatbot-closed-popup-message
+{
+  float: left;
+  display: block;
+  margin-top: 30px;
+  margin-right: 20px;
+  color : #5334c0;
+  font-size : 16pt;
+}
+.chat-box-home
+{
+  position: fixed;
+  bottom : 0;
+  right : 0;
+  z-index: 10;
+}
+.close-chat
+{
+  font-size: 16pt;
+  bottom : 555px;
+  right : 10px;
+  position: relative;
+  float: right;
+  cursor: pointer;
+}
+.close-chat-img
+{
+  width: 20px;
+  height: 20px;
+}
+
 html, body {
   font-family: 'Open Sans', Open+Sans;
 

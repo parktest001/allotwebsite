@@ -1,5 +1,8 @@
 <template>
   <div class="chat-box">
+    <div class="title-bot">
+      Chat us
+    </div>
     <div class="chat-box-list-container" ref="chatbox"  id="scroll-div">
       <ul class="chat-box-list">
         <li
@@ -8,8 +11,17 @@
           :class="message.author"
         >
           <p>
-            <span v-if="message.author === 'client-sent'">{{ message.text }}</span>
-            <span v-else><div class="received-main"><div class="received-main-sub" v-for="(msg,key) in message.list" :key="key" @click="() => selectedMessage(msg)">{{msg}}</div></div></span>
+            <span v-if="message.isReceived">
+              <span><div class="received-message-bot">{{message.message}}</div></span>
+              <span v-if="message.author === 'client-received'"><div class="received-main">
+                <div class="received-main-sub" v-for="(msg,key) in message.list" :key="key" @click="() => selectedMessage(msg)">{{msg}}</div>
+              </div>
+            </span>
+
+            </span>
+            <span v-else>
+              <span v-if="message.author === 'client-sent'">{{ message.text }}</span>
+            </span>
           </p>
         </li>
         <li v-if="apiCalled">
@@ -40,6 +52,7 @@ export default {
     this.messages.push({
         text: "hi",
         author: 'client-sent',
+        isReceived : false,
         list : []
       })
       var that = this
@@ -64,9 +77,19 @@ export default {
     },
     sendMessage() {
       const message = this.message
+      const lastMessage = this.messages[this.messages.length - 1].message
+      this.messages.pop()
+      this.messages.push({
+        text: '',
+        author: 'client-received',
+        isReceived : true,
+        list : [],
+        message : lastMessage,
+      })
       this.messages.push({
         text: message,
         author: 'client-sent',
+        isReceived : false,
         list : []
       })
       this.message = ''
@@ -90,13 +113,16 @@ export default {
 		  })
 			.then(res => res.json())
 			.then(json => {
-        json.map(function(value, key) {
+        console.log(json)
+        json.answers.map(function(value, key) {
           window.main.li.push(value);
         });
         this.messages.push({
         text: '',
         author: 'client-received',
-        list : this.li
+        isReceived : true,
+        list : this.li,
+        message : json.message,
       })
         this.apiCalled = false
         console.log(this.li)
@@ -109,15 +135,40 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.title-bot
+{
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14pt;
+  background: rgb(219, 219, 219);
+}
 .chat-box-list {
   display: flex;
   flex-direction: column;
   list-style-type: none;
 }
 .chat-box-list-container {
-  height: 400px;
+  height: 500px;
   overflow: scroll;
-  margin-bottom: 1px;
+}
+.received-message-bot
+{
+  float :left;
+  height: 40px;
+  background: #99cc00;
+  color : #ffffff;
+  border-radius: 20px;
+  min-width: 40px;
+  max-width: 200px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 .chat-box-list {
   padding-left: 10px;
@@ -146,7 +197,7 @@ export default {
       padding-right: 20px;
     }
     p {
-      float: left;
+      float: right;
     }
   }
   .client-received {
@@ -167,33 +218,35 @@ export default {
       display: flex;
       min-width: 100px;
       max-width: 400px;
-      margin-right: 20px;
+      margin-left: 20px;
       margin-bottom: 10px;
-      padding-left: 10px;
+      padding-left: 20px;
       padding-right: 10px;
       align-items: center;
       justify-content: center;
       height: 40px;
-      background-color: #99cc00;
+      color : #0070C8;
+      background-color: #ffffff;
       border-radius: 20px;
+      border: 1px solid #0070C8;
       cursor: pointer;
 }
 .received-main-sub:hover
 {
   height: 38px;
-  background-color: #ffffff;
-  color: #99cc00;
-  border: 1px solid #99cc00;
-
+  background-color: #0070C8;
+  color: #ffffff;
 }
 .chat-box {
-  margin: 10px;
+  background: #f9f9ff;
+  position: absolute;
   border: 1px solid #999;
-  width: 50vw;
-  height: 400px;
+  width: 30vw;
+  height: 540px;
+  align-items: bottom;
   border-radius: 4px;
-  margin-left: auto;
-  margin-right: auto;
+  bottom: 10px;
+  right: 10px;
   align-items: space-between;
   justify-content: space-between;
 }

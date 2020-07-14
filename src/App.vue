@@ -4,19 +4,16 @@
       <router-view></router-view>
     </main>
     <div id="app">
-    <ChatBox msg="Welcome to Your Vue.js App"/>
   </div>
   </div>
   
 </template>
 <script>
 import navbar from "./components/Navbar";
-import ChatBox from './components/ChatBox.vue'
 
 export default {
   name: 'app',
   components: {
-    ChatBox
   }
 };
 </script>
