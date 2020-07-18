@@ -6,7 +6,7 @@
       <div class="close-chat" @click="chatBotState()"><img src="https://img.icons8.com/ios-filled/50/000000/x.png" class="close-chat-img"/></div>
       <ChatBox msg="Welcome to Your Vue.js App"/>
     </div>
-    <div v-else class="chatbot-closed-popup"><div class="chatbot-closed-popup-message">Hey may i help u</div><img @click="chatBotState()" class="chatbot-closed-popup-image" src="../assets/chatbot-popup.png"/></div>
+    <div v-else class="chatbot-closed-popup"><div class="chatbot-closed-popup-message">Hey!!! may I help you?</div><div class="imgdiv"><img @click="chatBotState()" class="chatbot-closed-popup-image" src="../assets/chatbot-popup.png"/></div></div>
 
 <div class="mainDiv">
   <div class="subDiv">
@@ -194,23 +194,59 @@ export default {
 {
   position: fixed;
   bottom : 20px;
-  right : 20px;
+  right : 30px;
 }
 .chatbot-closed-popup-image
 {
-  width : 80px;
-  height: 80px;
-  cursor: pointer;
+  width : 70px;
+  height: 70px;
+  cursor:pointer;
+  padding-left: 2.5px;
+  padding-top: 2.5px;
+}
+/* .chatbot-closed-popup-image:hover
+{
+  width : 75px;
+  height: 75px;
+  cursor:pointer;
+} */
+.imgdiv{
+  position: fixed;
+  bottom : 20px;
+  right : 30px;
+  background-color: #3400c5;
+  width:75px;
+  height:75px;
+  border-radius: 100px;
 }
 .chatbot-closed-popup-message
 {
+  text-shadow: 2px 2px 8px #008cff;
   float: left;
   display: block;
-  margin-top: 30px;
-  margin-right: 20px;
-  color : #5334c0;
-  font-size : 16pt;
+  margin-bottom: 25px;
+  margin-right: 75px;
+  font-weight:bolder;
+  font-size: 20px;
+  color:#3400c5;
+  overflow: hidden; 
+  white-space: nowrap; 
+  letter-spacing: .10em;
+  animation: 
+    typing 3.5s steps(40, end) infinite,
+    blink-caret .75s step-end infinite;
 }
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+}
+
+
+
 .chat-box-home
 {
   position: fixed;
@@ -220,15 +256,15 @@ export default {
 }
 .close-chat
 {
-  font-size: 16pt;
-  bottom : 555px;
-  right : 10px;
+  bottom : 520px;
+  right : 18px;
   position: relative;
   float: right;
   cursor: pointer;
 }
 .close-chat-img
 {
+
   width: 20px;
   height: 20px;
 }

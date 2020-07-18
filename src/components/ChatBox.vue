@@ -1,18 +1,24 @@
 <template>
   <div class="chat-box">
     <div class="title-bot">
-      Chat us
+      <div class="onlinesymbol"></div>
+      <img class="botattitleimg" src="../assets/chatbot-popup.png">
+      <div class="textattitle">Chat us</div>
     </div>
     <div class="chat-box-list-container" ref="chatbox"  id="scroll-div">
-      <ul class="chat-box-list">
+      <ul class="chat-box-list" ref="messagesContainer">
         <li
           v-for="(message, idx) in messages"
           :key="idx"
           :class="message.author"
         >
+        
           <p>
+            
             <span v-if="message.isReceived">
-              <span><div class="received-message-bot">{{message.message}}</div></span>
+              
+              <img class="bot" src="../assets/chatbot-popup.png">
+              <div class="received-message-bot">{{message.message}}</div>
               <span v-if="message.author === 'client-received'"><div class="received-main">
                 <div class="received-main-sub" v-for="(msg,key) in message.list" :key="key" @click="() => selectedMessage(msg)">{{msg}}</div>
               </div>
@@ -38,7 +44,9 @@
 </template>
 
 <script>
+
 export default {
+  
   name: 'ChatBox',
   data: () => ({
     message: '',
@@ -58,17 +66,21 @@ export default {
       var that = this
       this.apiCalled = true
       setTimeout(function () {
-      that.getQueries('http://149.129.129.250:8080/ChannelCreation/rest/chatbot/ask','hi')
+      that.getQueries('https://server.allotpark.buzz/ChannelCreation/rest/chatbot/ask','hi')
           }, 2000);
   },
   methods: {
+    
     scrollBottom()
     {
       var objDiv = document.getElementById("scroll-div");
-      objDiv.scrollTop = objDiv.clientHeight;
-      console.log(objDiv.scrollTop)
-      console.log(objDiv.scrollHeight)
-
+      objDiv.scrollTop = objDiv.scrollHeight;
+      // console.log(objDiv.scrollTop)
+      // console.log(objDiv.scrollHeight)
+      // var container = this.$el.querySelector("#scroll-div");
+      // container.scrollTop = container.scrollHeight;
+      // var content = this.$refs.messagesContainer;
+      //       content.scrollTop = content.scrollHeight
     },
     selectedMessage(msg)
     {
@@ -97,8 +109,9 @@ export default {
       this.scrollBottom()
       this.apiCalled = true
       setTimeout(function () {
-              that.getQueries('http://149.129.129.250:8080/ChannelCreation/rest/chatbot/ask',message)
+              that.getQueries('https://server.allotpark.buzz/ChannelCreation/rest/chatbot/ask',message)
     }, 2000);
+
     },
     getQueries(url,ques) {
       window.main = this;
@@ -137,13 +150,41 @@ export default {
 <style scoped lang="scss">
 .title-bot
 {
+  height: 55px;
+  
+  
+  background:#3400c5;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.onlinesymbol{
+  background-color: rgb(28, 214, 28);
+  width: 10px;
+  height: 10px;
+  border-radius: 15px;
+  border:2px solid white;
+  position: absolute;
+  margin-left: 48px;
+  margin-top: 37px;
+  z-index: 1000;
+}
+.botattitle{
+  margin-left: 10px;
+}
+.botattitleimg{
   height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  float:left;
+  margin-left: 20px;
+  margin-top: 8px;
+  margin-right: 10px;
+  position: relative;
+}
+.textattitle{
+  padding-top: 18px;
   font-weight: bold;
   font-size: 14pt;
-  background: rgb(219, 219, 219);
+  font-family: sans-serif;
+  color:#ffffff;
 }
 .chat-box-list {
   display: flex;
@@ -151,16 +192,23 @@ export default {
   list-style-type: none;
 }
 .chat-box-list-container {
-  height: 500px;
-  overflow: scroll;
+  height: 420px;
+  overflow-y: scroll;
+}
+.bot{
+  height:20px;
+  margin-left: 35px;
+  float :left;
+  margin-top: 22px;
 }
 .received-message-bot
 {
   float :left;
   height: 40px;
-  background: #99cc00;
-  color : #ffffff;
+  background: rgb(219, 219, 219);;
+  color : #000000;
   border-radius: 20px;
+  border-bottom-left-radius: 0px;
   min-width: 40px;
   max-width: 200px;
   padding-left: 20px;
@@ -169,6 +217,7 @@ export default {
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+  margin-left: 5px;
 }
 .chat-box-list {
   padding-left: 10px;
@@ -188,21 +237,28 @@ export default {
   }
   .client-sent {
     span {
-      display: block;
-      min-width: 50px;
+      height: 27px;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      min-width: 40px;
       border-radius: 20px;
-      max-width: 400px;
+      border-bottom-right-radius : 0px;
+      max-width: 200px;
       background: #0070C8;
-      padding-left: 20px;
-      padding-right: 20px;
+      padding-left: 13px;
+      padding-right: 13px;
+
     }
     p {
+      height:5px;
       float: right;
     }
   }
   .client-received {
     float: right;
     p {
+      height:80px;
       float: right;
     }
   }
@@ -214,14 +270,15 @@ export default {
 }
 .received-main-sub
 {
+  cursor: pointer;
       float: right;
       display: flex;
       min-width: 100px;
       max-width: 400px;
-      margin-left: 20px;
+      margin-left: 10px;
       margin-bottom: 10px;
-      padding-left: 20px;
-      padding-right: 10px;
+      padding-left: 13px;
+      padding-right: 13px;
       align-items: center;
       justify-content: center;
       height: 40px;
@@ -229,11 +286,11 @@ export default {
       background-color: #ffffff;
       border-radius: 20px;
       border: 1px solid #0070C8;
-      cursor: pointer;
+      
 }
 .received-main-sub:hover
 {
-  height: 38px;
+  height: 40px;
   background-color: #0070C8;
   color: #ffffff;
 }
@@ -241,10 +298,10 @@ export default {
   background: #f9f9ff;
   position: absolute;
   border: 1px solid #999;
-  width: 30vw;
-  height: 540px;
+  width: 400px;
+  height: 500px;
   align-items: bottom;
-  border-radius: 4px;
+  border-radius: 10px;
   bottom: 10px;
   right: 10px;
   align-items: space-between;
